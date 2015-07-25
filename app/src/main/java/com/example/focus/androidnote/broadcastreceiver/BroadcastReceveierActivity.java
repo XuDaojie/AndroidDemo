@@ -14,17 +14,12 @@ import com.example.focus.androidnote.R;
 
 public class BroadcastReceveierActivity extends BaseActivity {
 
+    private BroadcastReceiver mSystemBroadcastReceiver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_broadcast_receveier);
-
-        BroadcastReceiver mSystemBroadcastReceiver = new SystemBroadcastReceiver();
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        registerReceiver(mSystemBroadcastReceiver, intentFilter);
-
-        Log.i(getClass().getName() + "main", this.toString());
     }
 
     @Override
@@ -47,5 +42,22 @@ public class BroadcastReceveierActivity extends BaseActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (mSystemBroadcastReceiver == null) {
+            mSystemBroadcastReceiver = new SystemBroadcastReceiver();
+        }
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(mSystemBroadcastReceiver, intentFilter);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(mSystemBroadcastReceiver);
     }
 }

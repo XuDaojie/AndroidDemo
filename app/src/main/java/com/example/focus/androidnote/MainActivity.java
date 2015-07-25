@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.focus.androidnote.activitylifecycle.LifeCycleActivity;
+import com.example.focus.androidnote.broadcastreceiver.BroadcastReceveierActivity;
 
 
 public class MainActivity extends BaseActivity {
@@ -44,6 +45,8 @@ public class MainActivity extends BaseActivity {
         Intent intent = null;
         if (id == R.id.life_cycle_activity_tv) {
             intent = new Intent(mContext, LifeCycleActivity.class);
+        } else if (id == R.id.broadcast_receveier_tv) {
+            intent = new Intent(mContext, BroadcastReceveierActivity.class);
         }
         startActivity(intent);
     }

@@ -25,9 +25,17 @@
             android:label="@string/title_life_cycle_activity" >
         </activity>
         <activity
-            android:name=".toolbar.MainActivity"
+            android:name=".toolbar.ToolbarActivity"
             android:label="@string/title_activity_toolbar" >
         </activity>
+
+        <!--<receiver-->
+            <!--android:name=".broadcastreceiver.SystemBroadcastReceiver">-->
+            <!--<intent-filter>-->
+                <!--&lt;!&ndash; 监听网络变化&ndash;&gt;-->
+                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
     </application>
 
 </manifest>
