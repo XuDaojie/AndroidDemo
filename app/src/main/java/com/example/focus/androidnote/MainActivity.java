@@ -1,12 +1,15 @@
 package com.example.focus.androidnote;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.example.focus.androidnote.activitylifecycle.LifeCycleActivity;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +37,14 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void tvOnClick(View view) {
+        int id = view.getId();
+        Intent intent = null;
+        if (id == R.id.life_cycle_activity_tv) {
+            intent = new Intent(mContext, LifeCycleActivity.class);
+        }
+        startActivity(intent);
     }
 }

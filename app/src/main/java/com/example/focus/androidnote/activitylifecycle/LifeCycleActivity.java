@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.focus.androidnote.BaseActivity;
+import com.example.focus.androidnote.R;
 
 /**
  * Created by focus on 15/7/25.
@@ -15,7 +16,7 @@ public class LifeCycleActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_life_cycle_activity);
         Log.d(TAG, "onCreate");
     }
 
@@ -23,6 +24,12 @@ public class LifeCycleActivity extends BaseActivity {
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onReStart");
     }
 
     @Override
