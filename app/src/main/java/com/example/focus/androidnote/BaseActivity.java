@@ -8,7 +8,7 @@ import android.support.v7.app.ActionBarActivity;
  * Created by focus on 15/7/24.
  */
 public class BaseActivity extends ActionBarActivity {
-    Context mContext;
+    protected Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

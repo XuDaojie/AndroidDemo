@@ -20,6 +20,14 @@
             android:name=".broadcastreceiver.BroadcastReceveierActivity"
             android:label="@string/title_activity_broadcast_receveier" >
         </activity>
+        <activity
+            android:name=".activitylifecycle.LifeCycleActivity"
+            android:label="@string/title_life_cycle_activity" >
+        </activity>
+        <activity
+            android:name=".toolbar.MainActivity"
+            android:label="@string/title_activity_toolbar" >
+        </activity>
     </application>
 
 </manifest>
