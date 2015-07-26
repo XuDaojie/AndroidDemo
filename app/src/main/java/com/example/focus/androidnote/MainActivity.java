@@ -2,12 +2,16 @@ package com.example.focus.androidnote;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.focus.androidnote.activitylifecycle.LifeCycleActivity;
 import com.example.focus.androidnote.broadcastreceiver.BroadcastReceveierActivity;
+import com.example.focus.androidnote.toolbar.ToolbarActivity;
+import com.example.focus.androidnote.toolbar.ToolbarSlidingTabActivity;
+import com.example.focus.androidnote.viewpager.ViewPagerActivity;
 
 
 public class MainActivity extends BaseActivity {
@@ -47,6 +51,12 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, LifeCycleActivity.class);
         } else if (id == R.id.broadcast_receveier_tv) {
             intent = new Intent(mContext, BroadcastReceveierActivity.class);
+        } else if (id == R.id.toolbar_tv) {
+            intent = new Intent(mContext, ToolbarActivity.class);
+        } else if (id == R.id.toolbar_sliding_tab_tv) {
+            intent = new Intent(mContext, ToolbarSlidingTabActivity.class);
+        } else if (id == R.id.view_pager_tv) {
+            intent = new Intent(mContext, ViewPagerActivity.class);
         }
         startActivity(intent);
     }

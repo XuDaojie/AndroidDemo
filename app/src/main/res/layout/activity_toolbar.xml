@@ -8,22 +8,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#3F51B5">
-        <android.support.v4.view.ViewPager
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/pager" />
     </android.support.v7.widget.Toolbar>
 
-    <com.example.focus.androidnote.control.SlidingTabLayout
-        android:id="@+id/v7_sliding_tabs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </ScrollView>
+    <!--<com.example.focus.androidnote.control.SlidingTabLayout-->
+        <!--android:id="@+id/v7_sliding_tabs"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
+    <!--</ScrollView>-->
 
 </RelativeLayout>

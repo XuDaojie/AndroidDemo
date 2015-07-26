@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppThemeNoActionBar" >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -29,13 +29,21 @@
             android:label="@string/title_activity_toolbar" >
         </activity>
 
-        <!--<receiver-->
-            <!--android:name=".broadcastreceiver.SystemBroadcastReceiver">-->
-            <!--<intent-filter>-->
-                <!--&lt;!&ndash; 监听网络变化&ndash;&gt;-->
-                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>-->
-            <!--</intent-filter>-->
-        <!--</receiver>-->
+        <!-- <receiver -->
+        <!-- android:name=".broadcastreceiver.SystemBroadcastReceiver"> -->
+        <!-- <intent-filter> -->
+        <!-- &lt;!&ndash; 监听网络变化&ndash;&gt; -->
+        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <activity
+            android:name=".toolbar.ToolbarSlidingTabActivity"
+            android:label="@string/title_activity_toolbar_sliding_tab" >
+        </activity>
+        <activity
+            android:name=".viewpager.ViewPagerActivity"
+            android:label="@string/title_activity_view_pager" >
+        </activity>
     </application>
 
 </manifest>

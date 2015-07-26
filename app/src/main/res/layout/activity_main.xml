@@ -23,6 +23,31 @@
             android:textSize="30dp"
             android:clickable="true"
             android:onClick="tvOnClick"/>
+        <TextView
+            android:id="@+id/toolbar_tv"
+            android:text="@string/title_activity_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
+        <!-- ToolbarSlidingTabActivity-->
+        <TextView
+            android:id="@+id/toolbar_sliding_tab_tv"
+            android:text="@string/title_activity_toolbar_sliding_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
+        <TextView
+            android:id="@+id/view_pager_tv"
+            android:text="@string/title_activity_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
 
     </LinearLayout>
 

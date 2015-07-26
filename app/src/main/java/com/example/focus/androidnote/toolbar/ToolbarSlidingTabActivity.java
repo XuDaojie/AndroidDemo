@@ -1,10 +1,15 @@
 package com.example.focus.androidnote.toolbar;
 
+import android.support.v4.view.PagerAdapter;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.focus.androidnote.BaseActivity;
@@ -12,23 +17,22 @@ import com.example.focus.androidnote.R;
 
 import java.util.ArrayList;
 
-
-public class ToolbarActivity extends BaseActivity {
-
+public class ToolbarSlidingTabActivity extends BaseActivity {
     protected Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_toolbar);
+        setContentView(R.layout.activity_toolbar_sliding_tab);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
-
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         //替换ActionBar
-        //setSupportActionBar(mToolbar);
+        setSupportActionBar(mToolbar);
+        //getSupportActionBar().setHomeButtonEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //关联menu布局文件
-        mToolbar.inflateMenu(R.menu.menu_main);
-        mToolbar.setTitle("Title");
+        //mToolbar.inflateMenu(R.menu.menu_main);
+        //mToolbar.setTitle("Title");
         //设置导航按钮
         mToolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
         //mToolbar.setNavigationIcon(R.drawable.abc_ic_launcher);
@@ -50,6 +54,9 @@ public class ToolbarActivity extends BaseActivity {
                 return false;
             }
         });
+//        MyAdapte adapter= new MyAdapte();
+//        mPage.setAdapter(adapter);
+//        mSlidingTabLayout.setViewPager(mPage);
     }
 
     @Override
@@ -77,4 +84,48 @@ public class ToolbarActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    int[] colors={0xFF123456,0xFF654321,0xFF336699};
+
+    class MyAdapte extends PagerAdapter {
+        String[] titles={"AA","BB","CC"};
+
+        ArrayList<LinearLayout> layouts=new ArrayList<LinearLayout>();
+        MyAdapte() {
+
+            for (int i = 0; i < 3; i++) {
+                LinearLayout l=new LinearLayout(ToolbarSlidingTabActivity.this);
+                l.setBackgroundColor(colors[i]);
+                l.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
+                layouts.add(l);
+            }
+
+        }
+
+        @Override
+        public int getCount() {
+            return layouts.size();
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object o) {
+            return view==o;
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            LinearLayout l=layouts.get(position);
+            container.addView(l);
+            return l;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            container.removeView(layouts.get(position));
+        }
+        //Tab上显示的文字
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titles[position];
+        }
+    }
 }
