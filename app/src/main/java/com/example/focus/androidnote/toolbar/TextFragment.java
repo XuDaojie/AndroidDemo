@@ -30,7 +30,7 @@ public class TextFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_text, container, false);
-        root.setBackgroundColor(Color.BLUE);
+        //root.setBackgroundColor(Color.BLUE);
         mTextTv = (TextView) root.findViewById(R.id.text_tv);
         mTextTv.setText(mText);
         Log.d(TAG, "onCreateView");

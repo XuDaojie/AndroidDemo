@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -44,7 +45,7 @@ public class ToolbarSlidingTabActivity extends BaseActivity {
         //mToolbar.inflateMenu(R.menu.menu_main);
         //mToolbar.setTitle("Title");
         //设置导航按钮
-        mToolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        //mToolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
         //mToolbar.setNavigationIcon(R.drawable.abc_ic_launcher);
         //
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -74,7 +75,6 @@ public class ToolbarSlidingTabActivity extends BaseActivity {
         mPage.setAdapter(adapter);
 
         mTabLayout.setViewPager(mPage);
-        //mTabLayout.setCustomTabView();
     }
 
     @Override
