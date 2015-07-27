@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.focus.androidnote.control;
+package com.example.focus.androidnote.toolbar;
 
 import android.content.Context;
 import android.graphics.Typeface;

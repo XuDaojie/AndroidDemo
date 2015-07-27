@@ -1,6 +1,10 @@
 package com.example.focus.androidnote.toolbar;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -9,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Adapter;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -19,12 +24,17 @@ import java.util.ArrayList;
 
 public class ToolbarSlidingTabActivity extends BaseActivity {
     protected Toolbar mToolbar;
+    protected ArrayList<Fragment> mListFragment;
+    protected SlidingTabLayout mTabLayout;
+    protected ViewPager mPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toolbar_sliding_tab);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mTabLayout = (SlidingTabLayout) findViewById(R.id.tab_layout);
+        mPage = (ViewPager) findViewById(R.id.pager);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         //替换ActionBar
         setSupportActionBar(mToolbar);
@@ -54,9 +64,17 @@ public class ToolbarSlidingTabActivity extends BaseActivity {
                 return false;
             }
         });
-//        MyAdapte adapter= new MyAdapte();
-//        mPage.setAdapter(adapter);
-//        mSlidingTabLayout.setViewPager(mPage);
+
+        mListFragment = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            mListFragment.add(TextFragment.newInstance("Fragment" + i));
+        }
+
+        PagerAdapter adapter = new TabPagerAdapter(getSupportFragmentManager());
+        mPage.setAdapter(adapter);
+
+        mTabLayout.setViewPager(mPage);
+        //mTabLayout.setCustomTabView();
     }
 
     @Override
@@ -84,48 +102,26 @@ public class ToolbarSlidingTabActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    int[] colors={0xFF123456,0xFF654321,0xFF336699};
 
-    class MyAdapte extends PagerAdapter {
-        String[] titles={"AA","BB","CC"};
+    class TabPagerAdapter extends FragmentPagerAdapter {
 
-        ArrayList<LinearLayout> layouts=new ArrayList<LinearLayout>();
-        MyAdapte() {
+        public TabPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
 
-            for (int i = 0; i < 3; i++) {
-                LinearLayout l=new LinearLayout(ToolbarSlidingTabActivity.this);
-                l.setBackgroundColor(colors[i]);
-                l.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
-                layouts.add(l);
-            }
-
+        @Override
+        public Fragment getItem(int position) {
+            return mListFragment.get(position);
         }
 
         @Override
         public int getCount() {
-            return layouts.size();
+            return mListFragment.size();
         }
 
-        @Override
-        public boolean isViewFromObject(View view, Object o) {
-            return view==o;
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            LinearLayout l=layouts.get(position);
-            container.addView(l);
-            return l;
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView(layouts.get(position));
-        }
-        //Tab上显示的文字
         @Override
         public CharSequence getPageTitle(int position) {
-            return titles[position];
+            return "Fragment" + position;
         }
     }
 }
