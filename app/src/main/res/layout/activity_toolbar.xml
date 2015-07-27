@@ -15,16 +15,4 @@
         android:background="@android:color/transparent">
     </android.support.v7.widget.Toolbar>
 
-    <!--<com.example.focus.androidnote.toolbar.SlidingTabLayout-->
-        <!--android:id="@+id/v7_sliding_tabs"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
-    <!--<ScrollView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent" />-->
-    <!--</ScrollView>-->
-
 </RelativeLayout>
