@@ -1,5 +1,6 @@
 package com.example.focus.androidnote.viewpager;
 
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
@@ -29,7 +30,7 @@ public class ViewPagerActivity extends ActionBarActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
 
         for (int i = 0; i < 3; i++) {
-            Fragment fragment = TextFragment.newInstance("fragment" + i);
+            Fragment fragment = TextFragment.newInstance("fragment" + i, "#cccccc");
             mFragmentList.add(fragment);
         }
 

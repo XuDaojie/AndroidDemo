@@ -48,6 +48,14 @@
             android:textSize="30dp"
             android:clickable="true"
             android:onClick="tvOnClick"/>
+        <TextView
+            android:id="@+id/toolbar_fade_in_tv"
+            android:text="@string/title_activity_toolbar_fade_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
 
     </LinearLayout>
 
