@@ -44,6 +44,10 @@
             android:name=".viewpager.ViewPagerActivity"
             android:label="@string/title_activity_view_pager" >
         </activity>
+        <activity
+            android:name=".toolbar.ToolbarFadeInActivity"
+            android:label="@string/title_activity_toolbar_fade_in" >
+        </activity>
     </application>
 
 </manifest>
