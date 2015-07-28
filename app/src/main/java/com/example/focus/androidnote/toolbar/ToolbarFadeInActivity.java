@@ -38,7 +38,7 @@ public class ToolbarFadeInActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toolbar_fade_in);
 
-        //mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbarTab = (Toolbar) findViewById(R.id.toolbar_tab);
         mTabLayout = (SlidingTabLayout) findViewById(R.id.tab_layout);
         mPager = (ViewPager) findViewById(R.id.page);
@@ -46,7 +46,9 @@ public class ToolbarFadeInActivity extends BaseActivity {
         mBackgrounds = new String[] {"#616161", "#9E9E9E", "#F5F5F5"};
         mFragmentList = new ArrayList<>();
 
-        setSupportActionBar(mToolbarTab);
+        setSupportActionBar(mToolbar);
+        //显示回退按钮
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         for (int i = 0; i < mBackgrounds.length; i++) {
             Fragment fragment = TextFragment.newInstance("Fragment" + i, mBackgrounds[i]);
