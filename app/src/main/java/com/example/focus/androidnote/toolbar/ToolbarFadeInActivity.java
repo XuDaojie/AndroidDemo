@@ -1,6 +1,9 @@
 package com.example.focus.androidnote.toolbar;
 
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.nfc.Tag;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -31,7 +34,7 @@ public class ToolbarFadeInActivity extends BaseActivity {
 
     private static final String TAG = "ToolbarFadeInActivity";
 
-    private ScrollView mMainLayout;
+    private MyScrollView mMainLayout;
     private LinearLayout mToolbarLayout;
     private Toolbar mToolbar;
     private Toolbar mToolbarTab;
@@ -50,7 +53,7 @@ public class ToolbarFadeInActivity extends BaseActivity {
         mToolbarTab = (Toolbar) findViewById(R.id.toolbar_tab);
         mTabLayout = (SlidingTabLayout) findViewById(R.id.tab_layout);
         mPager = (ViewPager) findViewById(R.id.page);
-        mMainLayout = (ScrollView) findViewById(R.id.main_layout);
+        mMainLayout = (MyScrollView) findViewById(R.id.main_layout);
 
         mBackgrounds = new String[] {"#616161", "#9E9E9E", "#F5F5F5"};
         mFragmentList = new ArrayList<>();
@@ -67,24 +70,12 @@ public class ToolbarFadeInActivity extends BaseActivity {
         mPager.setAdapter(new TagPageAdapter(getSupportFragmentManager()));
         mTabLayout.setViewPager(mPager);
 
-        mMainLayout.setOnTouchListener(new View.OnTouchListener() {
+        mMainLayout.setScrollViewListener(new MyScrollView.ScrollViewListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                int[] location = new int[2];
-                mToolbarTab.getLocationOnScreen(location);
-                int y = location[1];
-                Log.d(TAG, "x:" + location[0] + " y:" + location[1]);
-                if (location[1] < 99 && location[1] >= 0) {
-                    //mToolbar.setBackgroundColor(Color.argb(location[1], 0, 0, 255));
+            public void onScrollChanged(int x, int y, int oldxX, int oldY) {
+                if (y >=0 && y <= 255) {
+                    mToolbar.setBackgroundColor(Color.argb(y, 0, 0, 255));
                 }
-                mToolbar.getLocationOnScreen(location);
-                Log.d(TAG, "toolbar bottonx:" + location[0] + " y:" + location[1]);
-                Log.d(TAG, "toolbar height:" + mToolbar.getHeight());
-                if (mToolbar.getHeight() + location[1] == y) {
-                    Toast.makeText(mContext, "贴合", Toast.LENGTH_SHORT).show();
-                    mToolbar.setBackgroundColor(Color.argb(255, 0, 0, 255));
-                }
-                return false;
             }
         });
 

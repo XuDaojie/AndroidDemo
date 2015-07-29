@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context="com.example.focus.androidnote.toolbar.ToolbarFadeInActivity">
 
-    <ScrollView
+    <com.example.focus.androidnote.toolbar.MyScrollView
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
-    </ScrollView>
+    </com.example.focus.androidnote.toolbar.MyScrollView>
 
     <LinearLayout
         android:id="@+id/toolbar_layout"
