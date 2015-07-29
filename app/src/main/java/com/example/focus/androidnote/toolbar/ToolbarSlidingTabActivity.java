@@ -68,7 +68,8 @@ public class ToolbarSlidingTabActivity extends BaseActivity {
 
         mListFragment = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            mListFragment.add(TextFragment.newInstance("Fragment" + i));
+            Fragment fragment = TextFragment.newInstance("Fragment" + i);
+            mListFragment.add(fragment);
         }
 
         PagerAdapter adapter = new TabPagerAdapter(getSupportFragmentManager());
