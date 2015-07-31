@@ -21,7 +21,7 @@
                 android:layout_height="200dp"
                 android:background="@drawable/mat5"
                 android:scaleType="centerCrop"/>
-
+            <!-- 用于设置Tag-->
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar_tab"
                 android:layout_width="match_parent"
@@ -46,7 +46,7 @@
         android:id="@+id/toolbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+        <!-- 用于替换ActionBar -->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
