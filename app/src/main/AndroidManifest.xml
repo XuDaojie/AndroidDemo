@@ -52,6 +52,10 @@
             android:name=".statusbar.StatusBarActivity"
             android:label="@string/title_activity_status_bar" >
         </activity>
+        <activity
+            android:name=".notification.NotificationActivity"
+            android:label="@string/title_activity_notification" >
+        </activity>
     </application>
 
 </manifest>
