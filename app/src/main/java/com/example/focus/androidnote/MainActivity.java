@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.example.focus.androidnote.activitylifecycle.LifeCycleActivity;
 import com.example.focus.androidnote.broadcastreceiver.BroadcastReceveierActivity;
+import com.example.focus.androidnote.statusbar.StatusBarActivity;
 import com.example.focus.androidnote.toolbar.ToolbarActivity;
 import com.example.focus.androidnote.toolbar.ToolbarFadeInActivity;
 import com.example.focus.androidnote.toolbar.ToolbarSlidingTabActivity;
@@ -60,6 +61,8 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, ViewPagerActivity.class);
         } else if (id == R.id.toolbar_fade_in_tv) {
             intent = new Intent(mContext, ToolbarFadeInActivity.class);
+        } else if (id == R.id.status_bar_tv) {
+            intent = new Intent(mContext, StatusBarActivity.class);
         }
         startActivity(intent);
     }

@@ -48,6 +48,10 @@
             android:name=".toolbar.ToolbarFadeInActivity"
             android:label="@string/title_activity_toolbar_fade_in" >
         </activity>
+        <activity
+            android:name=".statusbar.StatusBarActivity"
+            android:label="@string/title_activity_status_bar" >
+        </activity>
     </application>
 
 </manifest>
