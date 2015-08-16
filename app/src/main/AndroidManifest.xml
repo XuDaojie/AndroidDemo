@@ -56,6 +56,10 @@
             android:name=".notification.NotificationActivity"
             android:label="@string/title_activity_notification" >
         </activity>
+        <activity
+            android:name=".customview.CustomViewActivity"
+            android:label="@string/title_activity_custom_view" >
+        </activity>
     </application>
 
 </manifest>
