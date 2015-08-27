@@ -72,7 +72,14 @@
             android:textSize="30dp"
             android:clickable="true"
             android:onClick="tvOnClick"/>
-
+        <TextView
+            android:id="@+id/handle_tv"
+            android:text="@string/title_activity_handle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
     </LinearLayout>
 
 

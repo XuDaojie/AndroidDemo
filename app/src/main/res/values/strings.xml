@@ -16,4 +16,5 @@
     <string name="title_activity_status_bar">StatusBarActivity</string>
     <string name="title_activity_notification">NotificationActivity</string>
     <string name="title_activity_custom_view">CustomViewActivity</string>
+    <string name="title_activity_handle">HandleActivity</string>
 </resources>

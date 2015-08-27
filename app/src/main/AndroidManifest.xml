@@ -60,6 +60,10 @@
             android:name=".customview.CustomViewActivity"
             android:label="@string/title_activity_custom_view" >
         </activity>
+        <activity
+            android:name=".handle.HandleActivity"
+            android:label="@string/title_activity_handle" >
+        </activity>
     </application>
 
 </manifest>
