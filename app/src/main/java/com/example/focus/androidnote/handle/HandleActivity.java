@@ -66,10 +66,13 @@ public class HandleActivity extends BaseActivity {
                     e.printStackTrace();
                 }
                 Message message = mHandle.obtainMessage();
+                //消息标志
                 message.what = 1;
-                message.obj = "data";
+                //传递简单数据
                 message.arg1 = 1;
                 message.arg2 = 2;
+                //
+                message.obj = "data";
                 mHandle.sendMessage(message);
             }
         }
