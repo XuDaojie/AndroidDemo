@@ -10,6 +10,7 @@ import android.view.View;
 import com.example.focus.androidnote.activitylifecycle.LifeCycleActivity;
 import com.example.focus.androidnote.broadcastreceiver.BroadcastReceveierActivity;
 import com.example.focus.androidnote.customview.CustomViewActivity;
+import com.example.focus.androidnote.frgament.FragmentActivity;
 import com.example.focus.androidnote.handle.HandleActivity;
 import com.example.focus.androidnote.statusbar.StatusBarActivity;
 import com.example.focus.androidnote.toolbar.ToolbarActivity;
@@ -69,6 +70,8 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, CustomViewActivity.class);
         } else if (id == R.id.handle_tv) {
             intent = new Intent(mContext, HandleActivity.class);
+        } else if (id == R.id.fragment_tv) {
+            intent = new Intent(mContext, FragmentActivity.class);
         }
         startActivity(intent);
     }

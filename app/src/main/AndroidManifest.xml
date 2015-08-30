@@ -64,6 +64,10 @@
             android:name=".handle.HandleActivity"
             android:label="@string/title_activity_handle" >
         </activity>
+        <activity
+            android:name=".frgament.FragmentActivity"
+            android:label="@string/title_activity_fragment" >
+        </activity>
     </application>
 
 </manifest>
