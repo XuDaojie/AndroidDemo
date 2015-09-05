@@ -17,6 +17,7 @@ import com.example.focus.androidnote.toolbar.ToolbarActivity;
 import com.example.focus.androidnote.toolbar.ToolbarFadeInActivity;
 import com.example.focus.androidnote.toolbar.ToolbarSlidingTabActivity;
 import com.example.focus.androidnote.viewpager.ViewPagerActivity;
+import com.example.focus.androidnote.volley.VolleyActivity;
 
 
 public class MainActivity extends BaseActivity {
@@ -72,7 +73,10 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, HandleActivity.class);
         } else if (id == R.id.fragment_tv) {
             intent = new Intent(mContext, FragmentActivity.class);
+        } else if (id == R.id.volley_tv) {
+            intent = new Intent(mContext, VolleyActivity.class);
         }
+
         startActivity(intent);
     }
 }

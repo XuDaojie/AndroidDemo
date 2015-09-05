@@ -18,4 +18,5 @@
     <string name="title_activity_custom_view">CustomViewActivity</string>
     <string name="title_activity_handle">HandleActivity</string>
     <string name="title_activity_fragment">FragmentActivity</string>
+    <string name="title_activity_volley">VolleyActivity</string>
 </resources>
