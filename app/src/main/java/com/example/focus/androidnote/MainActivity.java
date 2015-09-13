@@ -6,12 +6,14 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.PopupWindow;
 
 import com.example.focus.androidnote.activitylifecycle.LifeCycleActivity;
 import com.example.focus.androidnote.broadcastreceiver.BroadcastReceveierActivity;
 import com.example.focus.androidnote.customview.CustomViewActivity;
 import com.example.focus.androidnote.frgament.FragmentActivity;
 import com.example.focus.androidnote.handle.HandleActivity;
+import com.example.focus.androidnote.popupwindow.PopupWindowActivity;
 import com.example.focus.androidnote.statusbar.StatusBarActivity;
 import com.example.focus.androidnote.toolbar.ToolbarActivity;
 import com.example.focus.androidnote.toolbar.ToolbarFadeInActivity;
@@ -75,6 +77,8 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, FragmentActivity.class);
         } else if (id == R.id.volley_tv) {
             intent = new Intent(mContext, VolleyActivity.class);
+        } else if (id == R.id.pop_window_tv) {
+            intent = new Intent(mContext, PopupWindowActivity.class);
         }
 
         startActivity(intent);

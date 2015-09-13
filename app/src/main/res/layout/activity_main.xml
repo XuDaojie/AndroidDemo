@@ -96,6 +96,14 @@
             android:textSize="30dp"
             android:clickable="true"
             android:onClick="tvOnClick"/>
+        <TextView
+            android:id="@+id/pop_window_tv"
+            android:text="@string/title_activity_popup_window"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
     </LinearLayout>
 
 

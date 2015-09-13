@@ -19,4 +19,6 @@
     <string name="title_activity_handle">HandleActivity</string>
     <string name="title_activity_fragment">FragmentActivity</string>
     <string name="title_activity_volley">VolleyActivity</string>
+    <string name="title_activity_popup_window">PopupWindowActivity</string>
+    <string name="action_refresh">Refresh</string>
 </resources>

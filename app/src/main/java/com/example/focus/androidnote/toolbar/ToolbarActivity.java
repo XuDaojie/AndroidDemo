@@ -25,7 +25,7 @@ public class ToolbarActivity extends BaseActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         //替换ActionBar
-        //setSupportActionBar(mToolbar);
+        setSupportActionBar(mToolbar);
         //关联menu布局文件
         mToolbar.inflateMenu(R.menu.menu_main);
         mToolbar.setTitle("Title");
