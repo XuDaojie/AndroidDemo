@@ -78,6 +78,8 @@
             android:name=".popupwindow.PopupWindowActivity"
             android:label="@string/title_activity_popup_window" >
         </activity>
+        <activity android:name=".vitamio.MediaPlayerActivity"
+            android:label="@string/title_activity_vitamio"/>
     </application>
 
 </manifest>

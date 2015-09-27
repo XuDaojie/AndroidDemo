@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/mediacontroller_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/mediacontroller_play_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/mediacontroller_button"
+            android:contentDescription="@string/mediacontroller_play_pause"
+            android:src="@drawable/mediacontroller_pause" />
+        <ImageButton
+            android:id="@+id/mediacontroller_size_change"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:layout_alignTop="@id/mediacontroller_play_pause"
+            android:layout_alignBottom="@id/mediacontroller_play_pause"
+            android:background="@drawable/mediacontroller_button"
+            android:src="@drawable/mediacontroller_small"
+            android:onClick=""/>
+        <SeekBar
+            android:id="@+id/mediacontroller_seekbar"
+            style="@style/MediaController_SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/mediacontroller_play_pause"
+            android:layout_toLeftOf="@id/mediacontroller_size_change"
+            android:focusable="true"
+            android:max="1000" />
+        <TextView
+            android:id="@+id/mediacontroller_time_total"
+            style="@style/MediaController_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mediacontroller_seekbar"
+            android:layout_toLeftOf="@id/mediacontroller_size_change"
+            android:layout_marginRight="10dp"
+            android:text="01:32"/>
+        <TextView
+            android:id="@+id/mediacontroller_slash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MediaController_Text"
+            android:layout_toLeftOf="@id/mediacontroller_time_total"
+            android:layout_below="@id/mediacontroller_seekbar"
+            android:text=" / "/>
+        <TextView
+            android:id="@+id/mediacontroller_time_current"
+            style="@style/MediaController_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@id/mediacontroller_slash"
+            android:layout_below="@id/mediacontroller_seekbar"
+            android:text="00:09"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/mediacontroller_file_name"
+        style="@style/MediaController_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="download"
+        android:visibility="gone"/>
+
+</LinearLayout>

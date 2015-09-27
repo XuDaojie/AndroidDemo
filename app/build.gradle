@@ -30,4 +30,6 @@ dependencies {
     //图片缩放
     //compile 'com.github.chrisbanes.photoview:library:1.2.+'
     compile 'com.mcxiaoke.volley:library:1.0.+'
+
+    compile project (':vitamio')
 }

@@ -19,6 +19,7 @@ import com.example.focus.androidnote.toolbar.ToolbarActivity;
 import com.example.focus.androidnote.toolbar.ToolbarFadeInActivity;
 import com.example.focus.androidnote.toolbar.ToolbarSlidingTabActivity;
 import com.example.focus.androidnote.viewpager.ViewPagerActivity;
+import com.example.focus.androidnote.vitamio.MediaPlayerActivity;
 import com.example.focus.androidnote.volley.VolleyActivity;
 
 
@@ -79,6 +80,8 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, VolleyActivity.class);
         } else if (id == R.id.pop_window_tv) {
             intent = new Intent(mContext, PopupWindowActivity.class);
+        } else if (id == R.id.media_player_tv) {
+            intent = new Intent(mContext, MediaPlayerActivity.class);
         }
 
         startActivity(intent);
