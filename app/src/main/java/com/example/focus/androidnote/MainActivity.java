@@ -6,12 +6,15 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.PopupWindow;
 
 import com.example.focus.androidnote.activitylifecycle.LifeCycleActivity;
 import com.example.focus.androidnote.broadcastreceiver.BroadcastReceveierActivity;
 import com.example.focus.androidnote.customview.CustomViewActivity;
+import com.example.focus.androidnote.fresco.FrescoActivity;
 import com.example.focus.androidnote.frgament.FragmentActivity;
+import com.example.focus.androidnote.glide.GlideActivity;
 import com.example.focus.androidnote.handle.HandleActivity;
 import com.example.focus.androidnote.popupwindow.PopupWindowActivity;
 import com.example.focus.androidnote.statusbar.StatusBarActivity;
@@ -21,6 +24,7 @@ import com.example.focus.androidnote.toolbar.ToolbarSlidingTabActivity;
 import com.example.focus.androidnote.viewpager.ViewPagerActivity;
 import com.example.focus.androidnote.vitamio.MediaPlayerActivity;
 import com.example.focus.androidnote.volley.VolleyActivity;
+import com.example.focus.androidnote.webview.WebViewActivity;
 
 
 public class MainActivity extends BaseActivity {
@@ -82,6 +86,12 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, PopupWindowActivity.class);
         } else if (id == R.id.media_player_tv) {
             intent = new Intent(mContext, MediaPlayerActivity.class);
+        } else if (id == R.id.fresco_tv) {
+            intent = new Intent(mContext, FrescoActivity.class);
+        } else if (id == R.id.glide_tv) {
+            intent = new Intent(mContext, GlideActivity.class);
+        } else if (id == R.id.web_view_tv) {
+            intent = new Intent(mContext, WebViewActivity.class);
         }
 
         startActivity(intent);

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ss</title>
+    <script type="text/javascript">
+        function test (argument) {
+            // body...
+            // alert(argument);
+            document.getElementById("content").innerHTML +=     
+                "<br\>java调用了js函数" + argument; 
+        }
+    </script>
+</head>
+<body>
+<button onclick="test('王小二')">点击</button><br>
+<div id="content">内容显示</div>
+</body>
+</html>

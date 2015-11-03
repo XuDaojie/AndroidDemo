@@ -112,6 +112,30 @@
             android:textSize="30dp"
             android:clickable="true"
             android:onClick="tvOnClick"/>
+        <TextView
+            android:id="@+id/fresco_tv"
+            android:text="Fresco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
+        <TextView
+            android:id="@+id/glide_tv"
+            android:text="Glide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
+        <TextView
+            android:id="@+id/web_view_tv"
+            android:text="WebView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
     </LinearLayout>
 
 
