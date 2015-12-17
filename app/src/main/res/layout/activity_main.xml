@@ -136,8 +136,30 @@
             android:textSize="30dp"
             android:clickable="true"
             android:onClick="tvOnClick"/>
+        <TextView
+            android:id="@+id/retrofit_tv"
+            android:text="Retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
+        <TextView
+            android:id="@+id/wheel_view_tv"
+            android:text="WheelView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
+        <TextView
+            android:id="@+id/recycler_view_tv"
+            android:text="RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
     </LinearLayout>
-
-
 
 </ScrollView>

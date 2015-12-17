@@ -2,12 +2,10 @@ package com.example.focus.androidnote;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
-import android.widget.PopupWindow;
 
 import com.example.focus.androidnote.activitylifecycle.LifeCycleActivity;
 import com.example.focus.androidnote.broadcastreceiver.BroadcastReceveierActivity;
@@ -17,6 +15,8 @@ import com.example.focus.androidnote.frgament.FragmentActivity;
 import com.example.focus.androidnote.glide.GlideActivity;
 import com.example.focus.androidnote.handle.HandleActivity;
 import com.example.focus.androidnote.popupwindow.PopupWindowActivity;
+import com.example.focus.androidnote.recyclerviewsample.RecyclerViewActivity;
+import com.example.focus.androidnote.retrofitsample.RetrofitActivity;
 import com.example.focus.androidnote.statusbar.StatusBarActivity;
 import com.example.focus.androidnote.toolbar.ToolbarActivity;
 import com.example.focus.androidnote.toolbar.ToolbarFadeInActivity;
@@ -25,6 +25,7 @@ import com.example.focus.androidnote.viewpager.ViewPagerActivity;
 import com.example.focus.androidnote.vitamio.MediaPlayerActivity;
 import com.example.focus.androidnote.volley.VolleyActivity;
 import com.example.focus.androidnote.webview.WebViewActivity;
+import com.example.focus.androidnote.wheelview.WheelViewActivity;
 
 
 public class MainActivity extends BaseActivity {
@@ -92,6 +93,12 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, GlideActivity.class);
         } else if (id == R.id.web_view_tv) {
             intent = new Intent(mContext, WebViewActivity.class);
+        } else if (id == R.id.retrofit_tv) {
+            intent = new Intent(mContext, RetrofitActivity.class);
+        } else if (id == R.id.wheel_view_tv) {
+            intent = new Intent(mContext, WheelViewActivity.class);
+        } else if (id == R.id.recycler_view_tv) {
+            intent = new Intent(mContext, RecyclerViewActivity.class);
         }
 
         startActivity(intent);

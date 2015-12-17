@@ -83,6 +83,9 @@
         <activity android:name=".fresco.FrescoActivity"/>
         <activity android:name=".glide.GlideActivity"/>
         <activity android:name=".webview.WebViewActivity"/>
+        <activity android:name=".retrofitsample.RetrofitActivity"/>
+        <activity android:name=".wheelview.WheelViewActivity"/>
+        <activity android:name=".recyclerviewsample.RecyclerViewActivity"/>
     </application>
 
 </manifest>
