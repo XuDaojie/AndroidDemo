@@ -13,4 +13,7 @@
     <com.example.focus.androidnote.customview.CountView
         android:layout_width="100dp"
         android:layout_height="100dp" />
+    <com.example.focus.androidnote.customview.CustomGroupView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
