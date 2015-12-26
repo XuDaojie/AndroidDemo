@@ -29,7 +29,6 @@ public class FrescoActivity extends BaseActivity {
                 .setFadeDuration(300)
                 .setProgressBarImage(new ProgressBarDrawable())
                 .build();
-
         draweeView.setHierarchy(hierarchy);
         draweeView.setImageURI(Uri.parse("http://img.netbian.com/file/2015/1029/c083c3542cb48b50924f32429526a6ab.jpg"));
     }

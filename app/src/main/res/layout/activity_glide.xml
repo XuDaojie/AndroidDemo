@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/my_image_view"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:background="#cccccc"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ResumeLoad"
-        android:onClick="resumeLoadOnClick"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="clearcahch"
-        android:onClick="clearCacheOnClick"/>
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:id="@+id/my_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@android:color/transparent"
+            tools:background="#cccccc"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ResumeLoad"
+            android:onClick="resumeLoadOnClick"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="clearcahch"
+            android:onClick="clearCacheOnClick"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="clearcahch"
+            android:onClick="transformationOnClick"/>
+    </LinearLayout>
+
+</ScrollView>

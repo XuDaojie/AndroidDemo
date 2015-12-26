@@ -23,4 +23,8 @@ public interface GitHubService {
     @FormUrlEncoded
     @POST("welcome")
     Call welcome1(@Field("timeline") String timeline, @Field("sign") String sign, @Field("ctype")  String ctype);
+
+    @FormUrlEncoded
+    @POST("userLogin")
+    Call<TestBean> welcome2(@Field("mobile") String timeline, @Field("password") String sign);
 }
