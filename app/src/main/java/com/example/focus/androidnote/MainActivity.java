@@ -16,8 +16,10 @@ import com.example.focus.androidnote.glide.GlideActivity;
 import com.example.focus.androidnote.handle.HandleActivity;
 import com.example.focus.androidnote.popupwindow.PopupWindowActivity;
 import com.example.focus.androidnote.recyclerviewsample.RecyclerViewActivity;
+import com.example.focus.androidnote.reflact.ReflactActivity;
 import com.example.focus.androidnote.retrofitsample.RetrofitActivity;
 import com.example.focus.androidnote.statusbar.StatusBarActivity;
+import com.example.focus.androidnote.supportdesign.CoordinatorLayoutActivity;
 import com.example.focus.androidnote.toolbar.ToolbarActivity;
 import com.example.focus.androidnote.toolbar.ToolbarFadeInActivity;
 import com.example.focus.androidnote.toolbar.ToolbarSlidingTabActivity;
@@ -99,6 +101,10 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, WheelViewActivity.class);
         } else if (id == R.id.recycler_view_tv) {
             intent = new Intent(mContext, RecyclerViewActivity.class);
+        } else if (id == R.id.reflect_tv) {
+            intent = new Intent(mContext, ReflactActivity.class);
+        } else if (id == R.id.coordinator_tv) {
+            intent = new Intent(mContext, CoordinatorLayoutActivity.class);
         }
 
         startActivity(intent);
