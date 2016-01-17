@@ -14,7 +14,7 @@ import com.example.focus.androidnote.R;
 /**
  * Created by xdj on 16/1/12.
  */
-public class CoordinatorLayoutActivity extends AppCompatActivity {
+public class CoordinatorLayoutPagerActivity extends AppCompatActivity {
     private Toolbar mToobar;
     private TabLayout mTabLayout;
     private ViewPager mPager;
@@ -22,7 +22,7 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coordinator_layout);
+        setContentView(R.layout.activity_coordinator_pager);
         mToobar = (Toolbar) findViewById(R.id.toolbar);
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
         mPager = (ViewPager) findViewById(R.id.pager);
@@ -41,7 +41,7 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new ListFragment();
+            return new RecyclerFragment();
         }
 
         @Override
