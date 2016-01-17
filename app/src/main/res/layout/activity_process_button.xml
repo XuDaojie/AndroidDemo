@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--<com.dd.processbutton.iml.SubmitProcessButton-->
+        <!--android:id="@+id/btnSend"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:minWidth="100dp"-->
+        <!--android:text="@string/Send"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:textSize="18sp"-->
+        <!--custom:pb_textComplete="@string/Done"-->
+        <!--custom:pb_textProgress="@string/Loading" />-->
+    <com.dd.processbutton.iml.ActionProcessButton
+        android:id="@+id/btnSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:text="登陆"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        custom:pb_colorComplete="@color/green_complete"
+        custom:pb_colorNormal="@color/blue_normal"
+        custom:pb_colorPressed="@color/blue_pressed"
+        custom:pb_colorProgress="@color/purple_progress"
+        custom:pb_textComplete="登陆成功"
+        custom:pb_textProgress="请等待..." />
+</LinearLayout>

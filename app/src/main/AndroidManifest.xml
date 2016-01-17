@@ -86,8 +86,10 @@
         <activity android:name=".retrofitsample.RetrofitActivity"/>
         <activity android:name=".wheelview.WheelViewActivity"/>
         <activity android:name=".recyclerviewsample.RecyclerViewActivity"/>
+        <activity android:name=".recyclerviewsample.RecyclerGridActivity"/>
         <activity android:name=".reflact.ReflactActivity"/>
-        <activity android:name=".supportdesign.CoordinatorLayoutActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".supportdesign.CoordinatorLayoutPagerActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".supportdesign.CoordinatorActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

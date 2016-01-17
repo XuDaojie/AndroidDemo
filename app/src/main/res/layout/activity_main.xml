@@ -176,6 +176,22 @@
             android:textSize="30dp"
             android:clickable="true"
             android:onClick="tvOnClick"/>
+        <TextView
+            android:id="@+id/coordinator_pager_tv"
+            android:text="CoordinatorLayoutPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
+        <TextView
+            android:id="@+id/recycler_grid_tv"
+            android:text="RecyclerViewGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
     </LinearLayout>
 
 </ScrollView>

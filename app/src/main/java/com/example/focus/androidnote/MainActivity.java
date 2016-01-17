@@ -2,7 +2,6 @@ package com.example.focus.androidnote;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,11 +14,13 @@ import com.example.focus.androidnote.frgament.FragmentActivity;
 import com.example.focus.androidnote.glide.GlideActivity;
 import com.example.focus.androidnote.handle.HandleActivity;
 import com.example.focus.androidnote.popupwindow.PopupWindowActivity;
+import com.example.focus.androidnote.recyclerviewsample.RecyclerGridActivity;
 import com.example.focus.androidnote.recyclerviewsample.RecyclerViewActivity;
 import com.example.focus.androidnote.reflact.ReflactActivity;
 import com.example.focus.androidnote.retrofitsample.RetrofitActivity;
 import com.example.focus.androidnote.statusbar.StatusBarActivity;
-import com.example.focus.androidnote.supportdesign.CoordinatorLayoutActivity;
+import com.example.focus.androidnote.supportdesign.CoordinatorActivity;
+import com.example.focus.androidnote.supportdesign.CoordinatorLayoutPagerActivity;
 import com.example.focus.androidnote.toolbar.ToolbarActivity;
 import com.example.focus.androidnote.toolbar.ToolbarFadeInActivity;
 import com.example.focus.androidnote.toolbar.ToolbarSlidingTabActivity;
@@ -103,8 +104,12 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, RecyclerViewActivity.class);
         } else if (id == R.id.reflect_tv) {
             intent = new Intent(mContext, ReflactActivity.class);
+        } else if (id == R.id.coordinator_pager_tv) {
+            intent = new Intent(mContext, CoordinatorLayoutPagerActivity.class);
+        } else if (id == R.id.recycler_grid_tv) {
+            intent = new Intent(mContext, RecyclerGridActivity.class);
         } else if (id == R.id.coordinator_tv) {
-            intent = new Intent(mContext, CoordinatorLayoutActivity.class);
+            intent = new Intent(mContext, CoordinatorActivity.class);
         }
 
         startActivity(intent);
