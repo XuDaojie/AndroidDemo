@@ -6,15 +6,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.example.focus.androidnote.BaseActivity;
 import com.example.focus.androidnote.R;
 
 /**
- * Created by xdj on 16/1/12.
+ * Created by xdj on 16/1/18.
  */
-public class CoordinatorLayoutPagerActivity extends AppCompatActivity {
+public class CoordinatorNestedPagerActivity extends BaseActivity {
     private Toolbar mToobar;
     private TabLayout mTabLayout;
     private ViewPager mPager;
@@ -22,7 +22,7 @@ public class CoordinatorLayoutPagerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coordinator_pager);
+        setContentView(R.layout.activity_coordinator_nested_pager);
         mToobar = (Toolbar) findViewById(R.id.toolbar);
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
         mPager = (ViewPager) findViewById(R.id.pager);
@@ -41,8 +41,8 @@ public class CoordinatorLayoutPagerActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new RecyclerFragment();
-//            return new ListFragment();
+//            return new RecyclerFragment();
+            return new NestedFragment();
         }
 
         @Override

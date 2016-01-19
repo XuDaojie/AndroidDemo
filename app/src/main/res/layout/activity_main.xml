@@ -185,6 +185,14 @@
             android:clickable="true"
             android:onClick="tvOnClick"/>
         <TextView
+            android:id="@+id/coordinator_nested_tv"
+            android:text="CoordinatorLayoutPagerNested"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="tvOnClick"/>
+        <TextView
             android:id="@+id/recycler_grid_tv"
             android:text="RecyclerViewGrid"
             android:layout_width="match_parent"

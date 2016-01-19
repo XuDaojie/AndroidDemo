@@ -3,10 +3,6 @@ package com.example.focus.androidnote.retrofitsample;
 
 import android.util.Log;
 
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.ByteArrayEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -41,33 +37,6 @@ public class Times {
             hex.append(Integer.toHexString(b & 0xFF));
         }
         return hex.toString();
-    }
-
-    public boolean post(byte[] paramArrayOfByte,String http) {
-
-        ByteArrayEntity arrayEntity=new ByteArrayEntity(paramArrayOfByte);
-
-        arrayEntity.setContentType("application/octet-stream");
-
-        HttpPost httpPost=new HttpPost(http);
-
-        httpPost.setEntity(arrayEntity);
-
-        DefaultHttpClient client=new DefaultHttpClient();
-
-        try {
-
-            int result=client.execute(httpPost).getStatusLine().getStatusCode();
-
-            Log.i("huilurry", "]]]=" + result);
-            } catch (Exception e) {
-
-            throw new RuntimeException(e);
-
-            }
-
-        return false;
-
     }
 
     public static String getMd5(String... values) {

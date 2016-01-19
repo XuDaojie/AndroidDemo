@@ -90,6 +90,7 @@
         <activity android:name=".reflact.ReflactActivity"/>
         <activity android:name=".supportdesign.CoordinatorLayoutPagerActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".supportdesign.CoordinatorActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".supportdesign.CoordinatorNestedPagerActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>j
     </application>
 
 </manifest>

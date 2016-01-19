@@ -21,6 +21,7 @@ import com.example.focus.androidnote.retrofitsample.RetrofitActivity;
 import com.example.focus.androidnote.statusbar.StatusBarActivity;
 import com.example.focus.androidnote.supportdesign.CoordinatorActivity;
 import com.example.focus.androidnote.supportdesign.CoordinatorLayoutPagerActivity;
+import com.example.focus.androidnote.supportdesign.CoordinatorNestedPagerActivity;
 import com.example.focus.androidnote.toolbar.ToolbarActivity;
 import com.example.focus.androidnote.toolbar.ToolbarFadeInActivity;
 import com.example.focus.androidnote.toolbar.ToolbarSlidingTabActivity;
@@ -110,6 +111,8 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, RecyclerGridActivity.class);
         } else if (id == R.id.coordinator_tv) {
             intent = new Intent(mContext, CoordinatorActivity.class);
+        } else if (id == R.id.coordinator_nested_tv) {
+            intent = new Intent(mContext, CoordinatorNestedPagerActivity.class);
         }
 
         startActivity(intent);
