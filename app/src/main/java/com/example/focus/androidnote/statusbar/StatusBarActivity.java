@@ -1,13 +1,10 @@
 package com.example.focus.androidnote.statusbar;
 
-import android.graphics.Color;
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.WindowManager;
 
 import com.example.focus.androidnote.R;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
@@ -22,7 +19,7 @@ public class StatusBarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_status_bar);
+        setContentView(R.layout.status_bar_activity);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 

@@ -23,7 +23,7 @@ public class WheelViewActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_wheel_view);
+//        setContentView(R.layout.wheel_view_activity);
 //        mContext = this;
 
 

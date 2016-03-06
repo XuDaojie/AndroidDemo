@@ -1,6 +1,5 @@
 package com.example.focus.androidnote.glide;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,7 +19,7 @@ public class GlideActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_glide);
+        setContentView(R.layout.glide_activity);
         imageView = (ImageView) findViewById(R.id.my_image_view);
         Glide.with(this).load("http://img.netbian.com/file/2015/1029/c083c3542cb48b50924f32429526a6ab.jpg").into(imageView);
     }

@@ -29,7 +29,7 @@ public class NestedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         mContext = getActivity();
-        View view = inflater.inflate(R.layout.fragment_coordinator_nested, container, false);
+        View view = inflater.inflate(R.layout.coordinator_nested_fragment, container, false);
         mContainer = (RecyclerView) view.findViewById(R.id.container);
         mContainer.setNestedScrollingEnabled(false);
         mContainer.setHasFixedSize(false);

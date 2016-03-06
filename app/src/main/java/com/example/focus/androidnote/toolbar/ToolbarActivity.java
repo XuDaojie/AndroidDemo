@@ -10,8 +10,6 @@ import android.widget.Toast;
 import com.example.focus.androidnote.BaseActivity;
 import com.example.focus.androidnote.R;
 
-import java.util.ArrayList;
-
 
 public class ToolbarActivity extends BaseActivity {
 
@@ -20,7 +18,7 @@ public class ToolbarActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_toolbar);
+        setContentView(R.layout.toolbar_activity);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);

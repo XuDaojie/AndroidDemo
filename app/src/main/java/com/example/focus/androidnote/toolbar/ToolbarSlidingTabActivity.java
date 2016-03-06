@@ -5,17 +5,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.Adapter;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.focus.androidnote.BaseActivity;
@@ -32,7 +26,7 @@ public class ToolbarSlidingTabActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_toolbar_sliding_tab);
+        setContentView(R.layout.toolbar_sliding_tab_activity);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
         mTabLayout = (SlidingTabLayout) findViewById(R.id.tab_layout);
         mPage = (ViewPager) findViewById(R.id.pager);

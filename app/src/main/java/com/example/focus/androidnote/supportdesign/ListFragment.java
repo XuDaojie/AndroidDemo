@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import com.example.focus.androidnote.R;
 
@@ -22,7 +21,7 @@ public class ListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.fragment_list, container, false);
+        View view = inflater.inflate(R.layout.list_fragment, container, false);
         ListView list = (ListView) view.findViewById(R.id.list);
         ArrayList<String> data = new ArrayList<>();
         for (int i = 0; i < 30; i++) {

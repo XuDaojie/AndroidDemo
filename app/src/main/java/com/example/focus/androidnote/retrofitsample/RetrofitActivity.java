@@ -11,14 +11,12 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 
 import java.io.IOException;
-import java.util.List;
 
 import retrofit.Call;
 import retrofit.Callback;
 //import retrofit.GsonConverterFactory;
 import retrofit.Response;
 import retrofit.Retrofit;
-import retrofit.http.FormUrlEncoded;
 
 /**
  * Created by xdj on 15/11/8.
@@ -28,7 +26,7 @@ public class RetrofitActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retrofit);
+        setContentView(R.layout.retrofit_activity);
 //        Retrofit retrofit = new Retrofit.Builder()
 //                .baseUrl("http://121.41.128.239:8105/jizhong/index.php/")
 //                .addConverterFactory(GsonConverterFactory.create())

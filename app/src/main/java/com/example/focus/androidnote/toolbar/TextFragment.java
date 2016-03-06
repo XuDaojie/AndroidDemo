@@ -1,6 +1,5 @@
 package com.example.focus.androidnote.toolbar;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -29,7 +28,7 @@ public class TextFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_text, container, false);
+        View root = inflater.inflate(R.layout.text_fragment, container, false);
         //root.setBackgroundColor(Color.BLUE);
         mTextTv = (TextView) root.findViewById(R.id.text_tv);
         mTextTv.setText(mText);

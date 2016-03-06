@@ -19,7 +19,7 @@ public class FirstFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_text, container, false);
+        View root = inflater.inflate(R.layout.text_fragment, container, false);
         root.setBackgroundColor(mColor);
 
         return root;

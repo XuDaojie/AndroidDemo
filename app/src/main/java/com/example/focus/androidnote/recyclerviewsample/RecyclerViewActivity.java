@@ -1,7 +1,6 @@
 package com.example.focus.androidnote.recyclerviewsample;
 
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
@@ -18,7 +17,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import jp.wasabeef.recyclerview.animators.adapters.AlphaInAnimationAdapter;
-import jp.wasabeef.recyclerview.animators.adapters.SlideInLeftAnimationAdapter;
 
 /**
  * Created by xdj on 15/12/9.
@@ -30,7 +28,7 @@ public class RecyclerViewActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler);
+        setContentView(R.layout.recycler_activity);
 
         mContainer = (RecyclerView) findViewById(R.id.container);
 

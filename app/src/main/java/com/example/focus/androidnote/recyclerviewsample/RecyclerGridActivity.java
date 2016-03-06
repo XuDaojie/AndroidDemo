@@ -26,7 +26,7 @@ public class RecyclerGridActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler);
+        setContentView(R.layout.recycler_activity);
         mContainer = (RecyclerView) findViewById(R.id.container);
         initData();
         GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, 2);

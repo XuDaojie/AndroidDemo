@@ -2,12 +2,10 @@ package com.example.focus.androidnote.handle;
 
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.focus.androidnote.BaseActivity;
 import com.example.focus.androidnote.R;
@@ -27,7 +25,7 @@ public class HandleActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_handle);
+        setContentView(R.layout.handle_activity);
 
         HandleThread thread = new HandleThread();
         thread.start();

@@ -1,7 +1,6 @@
 package com.example.focus.androidnote.toolbar;
 
 import android.graphics.Color;
-import android.os.Debug;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -40,7 +39,7 @@ public class ToolbarFadeInActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_toolbar_fade_in);
+        setContentView(R.layout.toolbar_fade_in_activity);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbarTab = (Toolbar) findViewById(R.id.toolbar_tab);

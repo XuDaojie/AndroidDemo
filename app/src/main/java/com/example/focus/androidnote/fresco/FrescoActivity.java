@@ -19,7 +19,7 @@ public class FrescoActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fresco.initialize(this);
-        setContentView(R.layout.activity_fresco);
+        setContentView(R.layout.fresco_activity);
         SimpleDraweeView draweeView = (SimpleDraweeView) findViewById(R.id.my_image_view1);
 
         // 定制图片加载效果

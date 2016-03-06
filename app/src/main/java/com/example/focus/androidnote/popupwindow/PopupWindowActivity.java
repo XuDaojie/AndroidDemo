@@ -2,14 +2,11 @@ package com.example.focus.androidnote.popupwindow;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.Toast;
@@ -31,7 +28,7 @@ public class PopupWindowActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popup_window);
+        setContentView(R.layout.popup_window_activity);
 
         mPopWindowBtn = (Button) findViewById(R.id.pop_window_btn);
         mPopMenuBtn = (Button) findViewById(R.id.pop_menu_btn);

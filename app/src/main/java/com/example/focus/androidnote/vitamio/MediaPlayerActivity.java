@@ -22,7 +22,7 @@ public class MediaPlayerActivity extends BaseActivity{
         super.onCreate(savedInstanceState);
         if (!LibsChecker.checkVitamioLibs(this))
             return;
-        setContentView(R.layout.activity_media_player);
+        setContentView(R.layout.media_player_activity);
 
         mVideoView = (VideoView) findViewById(R.id.surface);
 

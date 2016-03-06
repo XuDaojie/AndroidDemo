@@ -28,7 +28,7 @@ public class RecyclerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContext = getActivity();
-        View view = inflater.inflate(R.layout.fragment_recycler, container, false);
+        View view = inflater.inflate(R.layout.recycler_fragment, container, false);
         mContainer = (RecyclerView) view.findViewById(R.id.container);
         init();
         return view;

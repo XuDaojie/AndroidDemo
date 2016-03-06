@@ -1,8 +1,6 @@
 package com.example.focus.androidnote.viewpager;
 
-import android.app.Activity;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -31,7 +29,7 @@ public class TextFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_text, container, false);
+        View root = inflater.inflate(R.layout.text_fragment, container, false);
         if (!TextUtils.isEmpty(mBackground)) {
             root.setBackgroundColor(Color.parseColor(mBackground));
         }
