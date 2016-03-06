@@ -13,6 +13,7 @@ import com.example.focus.androidnote.R;
 
 /**
  * Created by xdj on 16/1/18.
+ * TODO
  */
 public class CoordinatorNestedPagerActivity extends BaseActivity {
     private Toolbar mToobar;
