@@ -93,6 +93,7 @@
         <activity android:name="com.example.xdj.androiddemo.supportdesign.CoordinatorNestedPagerActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name="com.example.xdj.androiddemo.cardview.CardViewActivity" />
         <activity android:name="com.example.xdj.androiddemo.event.EventActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".layout.LayoutActivity" />
     </application>
 
 </manifest>

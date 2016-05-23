@@ -15,6 +15,7 @@ import com.example.xdj.androiddemo.fresco.FrescoActivity;
 import com.example.xdj.androiddemo.frgament.FragmentActivity;
 import com.example.xdj.androiddemo.glide.GlideActivity;
 import com.example.xdj.androiddemo.handle.HandleActivity;
+import com.example.xdj.androiddemo.layout.LayoutActivity;
 import com.example.xdj.androiddemo.popupwindow.PopupWindowActivity;
 import com.example.xdj.androiddemo.recyclerviewsample.RecyclerGridActivity;
 import com.example.xdj.androiddemo.recyclerviewsample.RecyclerViewActivity;
@@ -119,6 +120,8 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, CardViewActivity.class);
         } else if (id == R.id.event_tv) {
             intent = new Intent(mContext, EventActivity.class);
+        } else if (id == R.id.layout_tv) {
+            intent = new Intent(mContext, LayoutActivity.class);
         }
 
         startActivity(intent);

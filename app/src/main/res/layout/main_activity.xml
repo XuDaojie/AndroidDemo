@@ -1,5 +1,6 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.xdj.androiddemo.MainActivity">
 
@@ -7,215 +8,249 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/life_cycle_activity_tv"
-            android:text="@string/title_life_cycle_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_life_cycle_activity"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/broadcast_receveier_tv"
-            android:text="@string/title_activity_broadcast_receveier"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_activity_broadcast_receveier"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/toolbar_tv"
-            android:text="@string/title_activity_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_activity_toolbar"
+            android:textSize="30dp"/>
         <!-- ToolbarSlidingTabActivity-->
         <TextView
             android:id="@+id/toolbar_sliding_tab_tv"
-            android:text="@string/title_activity_toolbar_sliding_tab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_activity_toolbar_sliding_tab"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/view_pager_tv"
-            android:text="@string/title_activity_view_pager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_activity_view_pager"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/toolbar_fade_in_tv"
-            android:text="@string/title_activity_toolbar_fade_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_activity_toolbar_fade_in"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/status_bar_tv"
-            android:text="@string/title_activity_status_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_activity_status_bar"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/custom_view_tv"
-            android:text="@string/title_activity_custom_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_activity_custom_view"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/handle_tv"
-            android:text="@string/title_activity_handle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_activity_handle"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/fragment_tv"
-            android:text="@string/title_activity_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_activity_fragment"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/volley_tv"
-            android:text="@string/title_activity_volley"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_activity_volley"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/pop_window_tv"
-            android:text="@string/title_activity_popup_window"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_activity_popup_window"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/media_player_tv"
-            android:text="@string/title_activity_vitamio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="@string/title_activity_vitamio"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/fresco_tv"
-            android:text="Fresco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="Fresco"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/glide_tv"
-            android:text="Glide"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="Glide"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/web_view_tv"
-            android:text="WebView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="WebView"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/retrofit_tv"
-            android:text="Retrofit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="Retrofit"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/wheel_view_tv"
-            android:text="WheelView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="WheelView"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/recycler_view_tv"
-            android:text="RecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="RecyclerView"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/reflect_tv"
-            android:text="Reflect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="Reflect"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/coordinator_tv"
-            android:text="CoordinatorLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="CoordinatorLayout"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/coordinator_pager_tv"
-            android:text="CoordinatorLayoutPager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="CoordinatorLayoutPager"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/coordinator_nested_tv"
-            android:text="CoordinatorLayoutPagerNested"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="CoordinatorLayoutPagerNested"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/recycler_grid_tv"
-            android:text="RecyclerViewGrid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="RecyclerViewGrid"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/card_view_tv"
-            android:text="CardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="CardView"
+            android:textSize="30dp"/>
+
         <TextView
             android:id="@+id/event_tv"
-            android:text="事件冲突"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:clickable="true"
-            android:onClick="tvOnClick"/>
+            android:onClick="tvOnClick"
+            android:text="事件冲突"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:id="@+id/layout_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="tvOnClick"
+            android:text="布局优化"
+            android:textSize="30dp"/>
 
     </LinearLayout>
 
