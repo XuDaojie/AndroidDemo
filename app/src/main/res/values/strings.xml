@@ -22,4 +22,24 @@
     <string name="title_activity_popup_window">PopupWindowActivity</string>
     <string name="title_activity_vitamio">MediaPlayerActivity</string>
     <string name="action_refresh">Refresh</string>
+
+    <string-array name="citys">
+        <item >浙江</item>
+        <item >台州</item>
+        <item >玉环</item>
+        <item >珠港</item>
+        <item >古顺</item>
+        <item >北京</item>
+        <item >上海</item>
+        <item >广州</item>
+        <item >深圳</item>
+        <item >南京</item>
+        <item >杭州</item>
+        <item >西安</item>
+        <item >深圳</item>
+        <item >天津</item>
+        <item >城都</item>
+        <item >重庆</item>
+        <item >武汉</item>
+    </string-array>
 </resources>

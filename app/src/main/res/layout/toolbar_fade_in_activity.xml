@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.focus.androidnote.toolbar.ToolbarFadeInActivity">
+    tools:context="com.example.xdj.androiddemo.toolbar.ToolbarFadeInActivity">
 
-    <com.example.focus.androidnote.toolbar.MyScrollView
+    <com.example.xdj.androiddemo.toolbar.MyScrollView
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -28,19 +28,19 @@
                 android:layout_height="wrap_content"
                 android:background="#B6B6B6">
 
-                <com.example.focus.androidnote.toolbar.SlidingTabLayout
+                <com.example.xdj.androiddemo.toolbar.SlidingTabLayout
                     android:id="@+id/tab_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </android.support.v7.widget.Toolbar>
 
-            <com.example.focus.androidnote.viewpager.AutoHeightViewPager
+            <com.example.xdj.androiddemo.viewpager.AutoHeightViewPager
                 android:id="@+id/page"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
-    </com.example.focus.androidnote.toolbar.MyScrollView>
+    </com.example.xdj.androiddemo.toolbar.MyScrollView>
 
     <LinearLayout
         android:id="@+id/toolbar_layout"
