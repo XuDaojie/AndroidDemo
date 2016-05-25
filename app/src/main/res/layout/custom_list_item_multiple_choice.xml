@@ -23,6 +23,8 @@
             android:layout_marginTop="5dp"
             android:text="Content"/>
 
+        <!-- 由于选择状态完全托管给ListView控制了 -->
+        <!-- 所以设置 CheckBox 不可获得焦点并不可点击 -->
         <CheckBox
             android:id="@+id/cek"
             android:layout_width="wrap_content"
