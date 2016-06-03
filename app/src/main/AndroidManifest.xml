@@ -95,6 +95,7 @@
         <activity android:name="com.example.xdj.androiddemo.event.EventActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".layout.LayoutActivity" />
         <activity android:name=".listview.ListViewActivity" />
+        <activity android:name=".tipview.TipViewActivity" />
     </application>
 
 </manifest>

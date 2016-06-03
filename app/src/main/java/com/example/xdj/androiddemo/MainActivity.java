@@ -26,6 +26,7 @@ import com.example.xdj.androiddemo.statusbar.StatusBarActivity;
 import com.example.xdj.androiddemo.supportdesign.CoordinatorActivity;
 import com.example.xdj.androiddemo.supportdesign.CoordinatorLayoutPagerActivity;
 import com.example.xdj.androiddemo.supportdesign.CoordinatorNestedPagerActivity;
+import com.example.xdj.androiddemo.tipview.TipViewActivity;
 import com.example.xdj.androiddemo.toolbar.ToolbarActivity;
 import com.example.xdj.androiddemo.toolbar.ToolbarFadeInActivity;
 import com.example.xdj.androiddemo.toolbar.ToolbarSlidingTabActivity;
@@ -125,6 +126,8 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, LayoutActivity.class);
         } else if (id == R.id.listview_tv) {
             intent = new Intent(mContext, ListViewActivity.class);
+        } else if (id == R.id.tipview_tv) {
+            intent = new Intent(mContext, TipViewActivity.class);
         }
 
         startActivity(intent);

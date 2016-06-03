@@ -260,6 +260,14 @@
             android:onClick="tvOnClick"
             android:text="ListView"
             android:textSize="30dp"/>
+        <TextView
+            android:id="@+id/tipview_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="tvOnClick"
+            android:text="TipView"
+            android:textSize="30dp"/>
 
     </LinearLayout>
 
