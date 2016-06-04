@@ -1,7 +1,10 @@
-package com.example.xdj.androiddemo.activitylifecycle;
+package com.example.xdj.androiddemo.lifecycle;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +18,7 @@ import com.example.xdj.androiddemo.R;
  * Created by xdj on 15/7/25.
  * Activity生命周期
  */
-public class LifeCycleActivity extends BaseActivity {
+public class LifecycleActivity extends BaseActivity {
     private static final String TAG = "LifeCycleActivity";
 
     private LinearLayout mLinearLayout;
@@ -24,9 +27,15 @@ public class LifeCycleActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate");
-
-        setContentView(R.layout.life_cycle_activity);
+        setContentView(R.layout.lifecycle_activity);
         mLinearLayout = (LinearLayout) findViewById(R.id.root);
+
+        Fragment fragment = new LifecycleFragment();
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.fragment_fl, fragment);
+        ft.commit();
+        Log.d(TAG, "onCreateEnd");
     }
 
     @Override

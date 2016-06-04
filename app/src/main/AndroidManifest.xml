@@ -23,7 +23,7 @@
             android:label="@string/title_activity_broadcast_receveier" >
         </activity>
         <activity
-            android:name="com.example.xdj.androiddemo.activitylifecycle.LifeCycleActivity"
+            android:name=".lifecycle.LifecycleActivity"
             android:label="@string/title_life_cycle_activity" >
         </activity>
         <activity

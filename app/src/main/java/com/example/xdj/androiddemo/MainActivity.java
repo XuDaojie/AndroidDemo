@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.xdj.androiddemo.activitylifecycle.LifeCycleActivity;
+import com.example.xdj.androiddemo.lifecycle.LifecycleActivity;
 import com.example.xdj.androiddemo.broadcastreceiver.BroadcastReceveierActivity;
 import com.example.xdj.androiddemo.cardview.CardViewActivity;
 import com.example.xdj.androiddemo.customview.CustomViewActivity;
@@ -71,7 +71,7 @@ public class MainActivity extends BaseActivity {
         int id = view.getId();
         Intent intent = null;
         if (id == R.id.life_cycle_activity_tv) {
-            intent = new Intent(mContext, LifeCycleActivity.class);
+            intent = new Intent(mContext, LifecycleActivity.class);
         } else if (id == R.id.broadcast_receveier_tv) {
             intent = new Intent(mContext, BroadcastReceveierActivity.class);
         } else if (id == R.id.toolbar_tv) {
