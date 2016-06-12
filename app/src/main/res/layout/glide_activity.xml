@@ -18,22 +18,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ResumeLoad"
+            android:textAllCaps="false"
             android:onClick="resumeLoadOnClick"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="clearcahch"
+            android:text="ClearCache"
+            android:textAllCaps="false"
             android:onClick="clearCacheOnClick"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="clearcahch"
+            android:text="Transformation"
+            android:textAllCaps="false"
             android:onClick="transformationOnClick"/>
-        <Button
-            android:id="@+id/lambda"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="clearcahch"/>
+
+        <com.example.xdj.androiddemo.widget.MyListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/glide_list_item"/>
+
     </LinearLayout>
 
 </ScrollView>
