@@ -226,6 +226,15 @@
             android:textSize="30dp"/>
 
         <TextView
+            android:id="@+id/scroll_recycler_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="tvOnClick"
+            android:text="ScrollRecyclerView"
+            android:textSize="30dp"/>
+
+        <TextView
             android:id="@+id/card_view_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

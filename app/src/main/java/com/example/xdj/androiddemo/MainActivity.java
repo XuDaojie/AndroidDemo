@@ -20,6 +20,7 @@ import com.example.xdj.androiddemo.listview.ListViewActivity;
 import com.example.xdj.androiddemo.popupwindow.PopupWindowActivity;
 import com.example.xdj.androiddemo.recyclerviewsample.RecyclerGridActivity;
 import com.example.xdj.androiddemo.recyclerviewsample.RecyclerViewActivity;
+import com.example.xdj.androiddemo.recyclerviewsample.ScrollRecyclerActivity;
 import com.example.xdj.androiddemo.reflact.ReflactActivity;
 import com.example.xdj.androiddemo.retrofitsample.RetrofitActivity;
 import com.example.xdj.androiddemo.statusbar.StatusBarActivity;
@@ -35,6 +36,8 @@ import com.example.xdj.androiddemo.vitamio.MediaPlayerActivity;
 import com.example.xdj.androiddemo.volley.VolleyActivity;
 import com.example.xdj.androiddemo.webview.WebViewActivity;
 import com.example.xdj.androiddemo.wheelview.WheelViewActivity;
+
+import static android.R.attr.id;
 
 
 public class MainActivity extends BaseActivity {
@@ -114,6 +117,8 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, CoordinatorLayoutPagerActivity.class);
         } else if (id == R.id.recycler_grid_tv) {
             intent = new Intent(mContext, RecyclerGridActivity.class);
+        } else if (id == R.id.scroll_recycler_tv) {
+            intent = new Intent(mContext, ScrollRecyclerActivity.class);
         } else if (id == R.id.coordinator_tv) {
             intent = new Intent(mContext, CoordinatorActivity.class);
         } else if (id == R.id.coordinator_nested_tv) {
