@@ -20,13 +20,13 @@
         </activity>
         <activity
             android:name="com.example.xdj.androiddemo.broadcastreceiver.BroadcastReceveierActivity"
-            android:label="@string/title_activity_broadcast_receveier"></activity>
+            android:label="@string/title_activity_broadcast_receveier" />
         <activity
             android:name=".lifecycle.LifecycleActivity"
-            android:label="@string/title_life_cycle_activity"></activity>
+            android:label="@string/title_life_cycle_activity" />
         <activity
             android:name="com.example.xdj.androiddemo.toolbar.ToolbarActivity"
-            android:label="@string/title_activity_toolbar"></activity>
+            android:label="@string/title_activity_toolbar" />
 
         <!-- <receiver -->
         <!-- android:name=".broadcastreceiver.SystemBroadcastReceiver"> -->
@@ -37,34 +37,34 @@
         <!-- </receiver> -->
         <activity
             android:name="com.example.xdj.androiddemo.toolbar.ToolbarSlidingTabActivity"
-            android:label="@string/title_activity_toolbar_sliding_tab"></activity>
+            android:label="@string/title_activity_toolbar_sliding_tab" />
         <activity
             android:name="com.example.xdj.androiddemo.viewpager.ViewPagerActivity"
-            android:label="@string/title_activity_view_pager"></activity>
+            android:label="@string/title_activity_view_pager" />
         <activity
             android:name="com.example.xdj.androiddemo.toolbar.ToolbarFadeInActivity"
-            android:label="@string/title_activity_toolbar_fade_in"></activity>
+            android:label="@string/title_activity_toolbar_fade_in" />
         <activity
             android:name="com.example.xdj.androiddemo.statusbar.StatusBarActivity"
-            android:label="@string/title_activity_status_bar"></activity>
+            android:label="@string/title_activity_status_bar" />
         <activity
             android:name="com.example.xdj.androiddemo.notification.NotificationActivity"
-            android:label="@string/title_activity_notification"></activity>
+            android:label="@string/title_activity_notification" />
         <activity
             android:name="com.example.xdj.androiddemo.customview.CustomViewActivity"
-            android:label="@string/title_activity_custom_view"></activity>
+            android:label="@string/title_activity_custom_view" />
         <activity
             android:name="com.example.xdj.androiddemo.handle.HandleActivity"
-            android:label="@string/title_activity_handle"></activity>
+            android:label="@string/title_activity_handle" />
         <activity
             android:name="com.example.xdj.androiddemo.frgament.FragmentActivity"
-            android:label="@string/title_activity_fragment"></activity>
+            android:label="@string/title_activity_fragment" />
         <activity
             android:name="com.example.xdj.androiddemo.volley.VolleyActivity"
-            android:label="@string/title_activity_volley"></activity>
+            android:label="@string/title_activity_volley" />
         <activity
             android:name="com.example.xdj.androiddemo.popupwindow.PopupWindowActivity"
-            android:label="@string/title_activity_popup_window"></activity>
+            android:label="@string/title_activity_popup_window" />
         <activity
             android:name="com.example.xdj.androiddemo.vitamio.MediaPlayerActivity"
             android:label="@string/title_activity_vitamio" />
