@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.Checkable;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -65,7 +64,7 @@ public class ListViewActivity extends BaseActivity {
         mList.setAdapter(new ListCheckedAdapter());
     }
 
-    class ListCheckedAdapter extends BaseAdapter implements Checkable {
+    class ListCheckedAdapter extends BaseAdapter {
 
         char[] chars = new char[26];
 
@@ -104,21 +103,6 @@ public class ListViewActivity extends BaseActivity {
             viewHolder.mTitleTv.setText(chars[position] + "");
             viewHolder.mContentTv.setText((chars[position] + "").toUpperCase());
             return convertView;
-        }
-
-        @Override
-        public void setChecked(boolean checked) {
-
-        }
-
-        @Override
-        public boolean isChecked() {
-            return false;
-        }
-
-        @Override
-        public void toggle() {
-
         }
 
         class ViewHolder {
