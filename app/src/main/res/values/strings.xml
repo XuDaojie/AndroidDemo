@@ -10,7 +10,7 @@
     <string name="title_activity_toolbar_sliding_tab">ToolbarSlidingTabActivity</string>
     <string name="title_activity_view_pager">ViewPagerActivity</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_toolbar_fade_in">ToolbarFadeInActivity</string>
     <string name="title_activity_status_bar">StatusBarActivity</string>
@@ -24,22 +24,26 @@
     <string name="action_refresh">Refresh</string>
 
     <string-array name="citys">
-        <item >浙江</item>
-        <item >台州</item>
-        <item >玉环</item>
-        <item >珠港</item>
-        <item >古顺</item>
-        <item >北京</item>
-        <item >上海</item>
-        <item >广州</item>
-        <item >深圳</item>
-        <item >南京</item>
-        <item >杭州</item>
-        <item >西安</item>
-        <item >深圳</item>
-        <item >天津</item>
-        <item >城都</item>
-        <item >重庆</item>
-        <item >武汉</item>
+        <item>浙江</item>
+        <item>台州</item>
+        <item>玉环</item>
+        <item>珠港</item>
+        <item>古顺</item>
+        <item>北京</item>
+        <item>上海</item>
+        <item>广州</item>
+        <item>深圳</item>
+        <item>南京</item>
+        <item>杭州</item>
+        <item>西安</item>
+        <item>深圳</item>
+        <item>天津</item>
+        <item>城都</item>
+        <item>重庆</item>
+        <item>武汉</item>
     </string-array>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

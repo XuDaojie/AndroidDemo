@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<alpha xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:fromAlpha="1.0"         初始透明度 0:透明 1:不透明-->
+    <!--android:toAlpha="0.2"           结束透明度-->
+    <!--android:duration="1500"         动画持续时间 默认:0-->
+    <!--android:fillAfter="true"        动画结束后是否保持效果-->
+    <!--android:repeatCount="3"         播放次数 默认:1-->
+    <!--android:repeatMode="reverse" /> 重播模式 reverse|repeat 默认:repeat-->
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromAlpha="1.0"
+    android:toAlpha="0.2"
+    android:duration="1500"
+    android:fillAfter="true"
+    android:repeatCount="3"
+    android:repeatMode="reverse" />

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<scale xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:duration="3000"-->
+    <!--android:fillAfter="true"-->
+    <!--android:fromXScale="20dp"       初始宽度-->
+    <!--android:fromYScale="30dp"       初始高度-->
+    <!--android:toXScale="100dp"        结束宽度-->
+    <!--android:toYScale="100dp"        结束高度-->
+    <!--android:pivotX="50%"            动画相对于View X、Y坐标的开始位置-->
+    <!--android:pivotY="50%"/>          从0%-100%中取值，50%为物件的X或Y方向坐标上的中点位置-->
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="3000"
+    android:fillAfter="true"
+    android:fromXScale="0dp"
+    android:fromYScale="30dp"
+    android:toXScale="100dp"
+    android:toYScale="100dp"
+    android:pivotX="50%"
+    android:pivotY="50%" />

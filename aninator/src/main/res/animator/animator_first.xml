@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 貌似单独使用没啥用 -->
+<animator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="3000"
+    android:valueFrom="1"
+    android:valueTo="100"
+    android:valueType="intType"/>
