@@ -6,16 +6,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.xdj.androiddemo.lifecycle.LifecycleActivity;
 import com.example.xdj.androiddemo.broadcastreceiver.BroadcastReceveierActivity;
 import com.example.xdj.androiddemo.cardview.CardViewActivity;
 import com.example.xdj.androiddemo.customview.CustomViewActivity;
+import com.example.xdj.androiddemo.download.DownloadManagerActivity;
 import com.example.xdj.androiddemo.event.EventActivity;
 import com.example.xdj.androiddemo.fresco.FrescoActivity;
 import com.example.xdj.androiddemo.frgament.FragmentActivity;
 import com.example.xdj.androiddemo.glide.GlideActivity;
 import com.example.xdj.androiddemo.handle.HandleActivity;
 import com.example.xdj.androiddemo.layout.LayoutActivity;
+import com.example.xdj.androiddemo.lifecycle.LifecycleActivity;
 import com.example.xdj.androiddemo.listview.ListViewActivity;
 import com.example.xdj.androiddemo.popupwindow.PopupWindowActivity;
 import com.example.xdj.androiddemo.recyclerviewsample.RecyclerGridActivity;
@@ -36,8 +37,6 @@ import com.example.xdj.androiddemo.vitamio.MediaPlayerActivity;
 import com.example.xdj.androiddemo.volley.VolleyActivity;
 import com.example.xdj.androiddemo.webview.WebViewActivity;
 import com.example.xdj.androiddemo.wheelview.WheelViewActivity;
-
-import static android.R.attr.id;
 
 
 public class MainActivity extends BaseActivity {
@@ -133,6 +132,8 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, ListViewActivity.class);
         } else if (id == R.id.tipview_tv) {
             intent = new Intent(mContext, TipViewActivity.class);
+        } else if (id == R.id.download_tv) {
+            intent = new Intent(mContext, DownloadManagerActivity.class);
         }
 
         startActivity(intent);
