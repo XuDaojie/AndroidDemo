@@ -32,10 +32,10 @@ android {
     // 多渠道打包
     productFlavors {
         GooglePlay {
-            manifestPlaceholders = [UMENG_CHANNEL: "Google Play"]
+            manifestPlaceholders = [UMENG_CHANNEL: "google-play"]
         }
         Wandoujia {
-            manifestPlaceholders = [UMENG_CHANNEL: "Wandoujia"]
+            manifestPlaceholders = [UMENG_CHANNEL: "wandoujia"]
         }
     }
 
