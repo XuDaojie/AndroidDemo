@@ -4,8 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tipview.TipViewActivity">
-    <com.example.xdj.androiddemo.tipview.TipView
+    tools:context="io.github.xudaojie.androiddemo.tipview.TipViewActivity">
+    <io.github.xudaojie.androiddemo.tipview.TipView
         android:id="@+id/tip_view"
         android:layout_width="match_parent"
         android:layout_height="100dp"

@@ -6,7 +6,7 @@ android {
     buildToolsVersion '23.0.3'
 
     defaultConfig {
-        applicationId "com.example.xdj.androiddemo"
+        applicationId "io.github.xudaojie.androiddemo"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1

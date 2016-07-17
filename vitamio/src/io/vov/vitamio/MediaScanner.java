@@ -106,8 +106,6 @@ public class MediaScanner {
     }
   }
 
-  ;
-
   private void postscan(String[] directories) throws RemoteException {
     Iterator<FileCacheEntry> iterator = mFileCache.values().iterator();
 

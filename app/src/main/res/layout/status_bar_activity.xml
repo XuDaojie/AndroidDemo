@@ -7,7 +7,7 @@
     android:clipToPadding="true"
 
     android:background="@color/background_blue"
-    tools:context="com.example.xdj.androiddemo.statusbar.StatusBarActivity">
+    tools:context="io.github.xudaojie.androiddemo.statusbar.StatusBarActivity">
 
     <android.support.v7.widget.Toolbar
         android:fitsSystemWindows="true"

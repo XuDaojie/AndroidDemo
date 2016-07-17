@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.xdj.androiddemo">
+    package="io.github.xudaojie.androiddemo">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission
@@ -99,9 +99,9 @@
         <activity android:name=".download.DownloadManagerActivity"/>
         <activity android:name=".dagger.DaggerActivity"/>
         <!--<activity-->
-            <!--android:name=".Main2Activity"-->
-            <!--android:label="@string/title_activity_main2"-->
-            <!--android:theme="@style/AppTheme.NoActionBar">-->
+        <!--android:name=".Main2Activity"-->
+        <!--android:label="@string/title_activity_main2"-->
+        <!--android:theme="@style/AppTheme.NoActionBar">-->
         <!--</activity>-->
     </application>
 

@@ -33,7 +33,7 @@
             android:textAllCaps="false"
             android:onClick="transformationOnClick"/>
 
-        <com.example.xdj.androiddemo.widget.MyListView
+        <io.github.xudaojie.androiddemo.widget.MyListView
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

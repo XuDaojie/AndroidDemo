@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.xdj.androiddemo.toolbar.ToolbarFadeInActivity">
+    tools:context="io.github.xudaojie.androiddemo.toolbar.ToolbarFadeInActivity">
 
-    <com.example.xdj.androiddemo.toolbar.MyScrollView
+    <io.github.xudaojie.androiddemo.toolbar.MyScrollView
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -28,19 +28,19 @@
                 android:layout_height="wrap_content"
                 android:background="#B6B6B6">
 
-                <com.example.xdj.androiddemo.toolbar.SlidingTabLayout
+                <io.github.xudaojie.androiddemo.toolbar.SlidingTabLayout
                     android:id="@+id/tab_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </android.support.v7.widget.Toolbar>
 
-            <com.example.xdj.androiddemo.viewpager.AutoHeightViewPager
+            <io.github.xudaojie.androiddemo.viewpager.AutoHeightViewPager
                 android:id="@+id/page"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
-    </com.example.xdj.androiddemo.toolbar.MyScrollView>
+    </io.github.xudaojie.androiddemo.toolbar.MyScrollView>
 
     <LinearLayout
         android:id="@+id/toolbar_layout"

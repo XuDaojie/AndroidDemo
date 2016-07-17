@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.example.xdj.androiddemo.wheelview.CityPicker
+    <io.github.xudaojie.androiddemo.wheelview.CityPicker
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"/>

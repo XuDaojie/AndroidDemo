@@ -216,7 +216,7 @@ public class MediaController extends FrameLayout {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
             try {
                 mAnchor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
-                Method setWindowLayoutType = PopupWindow.class.getMethod("setWindowLayoutType", new Class[] { int.class });
+                Method setWindowLayoutType = PopupWindow.class.getMethod("setWindowLayoutType", int.class);
                 setWindowLayoutType.invoke(mWindow, WindowManager.LayoutParams.TYPE_APPLICATION_ATTACHED_DIALOG);
             } catch (Exception e) {
                 Log.e("setWindowLayoutType", e);
@@ -266,7 +266,7 @@ public class MediaController extends FrameLayout {
         mProgress = (SeekBar) v.findViewById(getResources().getIdentifier("mediacontroller_seekbar", "id", mContext.getPackageName()));
         if (mProgress != null) {
             if (mProgress instanceof SeekBar) {
-                SeekBar seeker = (SeekBar) mProgress;
+                SeekBar seeker = mProgress;
                 seeker.setOnSeekBarChangeListener(mSeekListener);
             }
             mProgress.setMax(1000);
@@ -586,11 +586,11 @@ public class MediaController extends FrameLayout {
     }
 
     public interface OnShownListener {
-        public void onShown();
+        void onShown();
     }
 
     public interface OnHiddenListener {
-        public void onHidden();
+        void onHidden();
     }
 
     public interface MediaPlayerControl {

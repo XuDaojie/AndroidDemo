@@ -1297,7 +1297,7 @@ public class MediaPlayer {
   }
 
   public interface OnHWRenderFailedListener {
-    public void onFailed();
+    void onFailed();
   }
 
   public interface OnPreparedListener {
@@ -1380,7 +1380,7 @@ public class MediaPlayer {
      *
      * @param mp the MediaPlayer that issued the seek operation
      */
-    public void onSeekComplete(MediaPlayer mp);
+    void onSeekComplete(MediaPlayer mp);
   }
 
   public interface OnVideoSizeChangedListener {
@@ -1391,7 +1391,7 @@ public class MediaPlayer {
      * @param width  the width of the video
      * @param height the height of the video
      */
-    public void onVideoSizeChanged(MediaPlayer mp, int width, int height);
+    void onVideoSizeChanged(MediaPlayer mp, int width, int height);
   }
 
   public interface OnErrorListener {
@@ -1442,7 +1442,7 @@ public class MediaPlayer {
      *
      * @param text the timedText to display
      */
-    public void onTimedText(String text);
+    void onTimedText(String text);
 
     /**
      * Called to indicate that an image timed text need to display
@@ -1451,7 +1451,7 @@ public class MediaPlayer {
      * @param width  the width of the timed text image
      * @param height the height of the timed text image
      */
-    public void onTimedTextUpdate(byte[] pixels, int width, int height);
+    void onTimedTextUpdate(byte[] pixels, int width, int height);
   }
 
   /**

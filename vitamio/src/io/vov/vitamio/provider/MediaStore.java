@@ -61,30 +61,30 @@ public final class MediaStore {
   }
 
   public interface MediaColumns extends BaseColumns {
-    public static final String DATA = "_data";
-    public static final String DIRECTORY = "_directory";
-    public static final String DIRECTORY_NAME = "_directory_name";
-    public static final String SIZE = "_size";
-    public static final String DISPLAY_NAME = "_display_name";
-    public static final String TITLE = "title";
-    public static final String TITLE_KEY = "title_key";
-    public static final String DATE_ADDED = "date_added";
-    public static final String DATE_MODIFIED = "date_modified";
-    public static final String MIME_TYPE = "mime_type";
-    public static final String AVAILABLE_SIZE = "available_size";
-    public static final String PLAY_STATUS = "play_status";
+    String DATA = "_data";
+    String DIRECTORY = "_directory";
+    String DIRECTORY_NAME = "_directory_name";
+    String SIZE = "_size";
+    String DISPLAY_NAME = "_display_name";
+    String TITLE = "title";
+    String TITLE_KEY = "title_key";
+    String DATE_ADDED = "date_added";
+    String DATE_MODIFIED = "date_modified";
+    String MIME_TYPE = "mime_type";
+    String AVAILABLE_SIZE = "available_size";
+    String PLAY_STATUS = "play_status";
 
   }
 
   public static final class Audio {
     public interface AudioColumns extends MediaColumns {
-      public static final String DURATION = "duration";
-      public static final String BOOKMARK = "bookmark";
-      public static final String ARTIST = "artist";
-      public static final String COMPOSER = "composer";
-      public static final String ALBUM = "album";
-      public static final String TRACK = "track";
-      public static final String YEAR = "year";
+      String DURATION = "duration";
+      String BOOKMARK = "bookmark";
+      String ARTIST = "artist";
+      String COMPOSER = "composer";
+      String ALBUM = "album";
+      String TRACK = "track";
+      String YEAR = "year";
     }
 
     public static final class Media implements AudioColumns {
@@ -96,21 +96,21 @@ public final class MediaStore {
   public static final class Video {
 
     public interface VideoColumns extends MediaColumns {
-      public static final String DURATION = "duration";
-      public static final String ARTIST = "artist";
-      public static final String ALBUM = "album";
-      public static final String WIDTH = "width";
-      public static final String HEIGHT = "height";
-      public static final String DESCRIPTION = "description";
-      public static final String LANGUAGE = "language";
-      public static final String LATITUDE = "latitude";
-      public static final String LONGITUDE = "longitude";
-      public static final String DATE_TAKEN = "datetaken";
-      public static final String BOOKMARK = "bookmark";
-      public static final String MINI_THUMB_MAGIC = "mini_thumb_magic";
-      public static final String HIDDEN = "hidden";
-      public static final String SUBTRACK = "sub_track";
-      public static final String AUDIO_TRACK = "audio_track";
+      String DURATION = "duration";
+      String ARTIST = "artist";
+      String ALBUM = "album";
+      String WIDTH = "width";
+      String HEIGHT = "height";
+      String DESCRIPTION = "description";
+      String LANGUAGE = "language";
+      String LATITUDE = "latitude";
+      String LONGITUDE = "longitude";
+      String DATE_TAKEN = "datetaken";
+      String BOOKMARK = "bookmark";
+      String MINI_THUMB_MAGIC = "mini_thumb_magic";
+      String HIDDEN = "hidden";
+      String SUBTRACK = "sub_track";
+      String AUDIO_TRACK = "audio_track";
     }
 
     public static final class Media implements VideoColumns {

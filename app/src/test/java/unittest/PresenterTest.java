@@ -1,7 +1,7 @@
 package unittest;
 
 
-import com.example.xdj.androiddemo.unittest.Presenter;
+import io.github.xudaojie.androiddemo.unittest.Presenter;
 
 import org.junit.Before;
 import org.junit.Test;

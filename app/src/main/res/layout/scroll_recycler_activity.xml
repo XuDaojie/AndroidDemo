@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:orientation="vertical"
-    tools:context=".recyclerviewsample.ScrollRecyclerActivity">
+    tools:context="io.github.xudaojie.androiddemo.recyclerviewsample.ScrollRecyclerActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"

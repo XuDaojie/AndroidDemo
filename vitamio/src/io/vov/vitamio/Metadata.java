@@ -213,9 +213,6 @@ public class Metadata {
   }
 
   private boolean checkMetadataId(final int val) {
-    if (val <= ANY || (LAST_SYSTEM < val && val < FIRST_CUSTOM)) {
-      return false;
-    }
-    return true;
+    return !(val <= ANY || (LAST_SYSTEM < val && val < FIRST_CUSTOM));
   }
 }
