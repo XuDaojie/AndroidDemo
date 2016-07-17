@@ -6,6 +6,8 @@ import com.example.xdj.androiddemo.BaseActivity;
 import com.example.xdj.androiddemo.R;
 import com.example.xdj.androiddemo.util.ActivityUtils;
 
+import javax.inject.Inject;
+
 import butterknife.ButterKnife;
 
 /**
@@ -13,6 +15,9 @@ import butterknife.ButterKnife;
  * Dagger2
  */
 public class DaggerActivity extends BaseActivity {
+
+    @Inject
+    LoginPresenter mLoginPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,10 @@ public class DaggerActivity extends BaseActivity {
                     loginFragment, R.id.content_frame);
         }
 
-        new LoginPresenter(loginFragment);
+//        new LoginPresenter(loginFragment);
+        DaggerLoginComponent.builder()
+                .loginPresenterModule(new LoginPresenterModule(loginFragment))
+                .build()
+                .inject(this);
     }
 }
