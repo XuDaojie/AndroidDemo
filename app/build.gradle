@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt' // Dagger2依赖
 
 android {
     compileSdkVersion 23
@@ -28,19 +29,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    // 测试多渠道打包
+    // 多渠道打包
     productFlavors {
         GooglePlay {
             manifestPlaceholders = [UMENG_CHANNEL: "Google Play"]
         }
-        Baidu {
-            manifestPlaceholders = [UMENG_CHANNEL: "Baidu"]
-        }
         Wandoujia {
             manifestPlaceholders = [UMENG_CHANNEL: "Wandoujia"]
-        }
-        Xiaomi {
-            manifestPlaceholders = [UMENG_CHANNEL: "Mi"]
         }
     }
 
@@ -52,23 +47,35 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    //图片缩放
-    //compile 'com.github.chrisbanes.photoview:library:1.2.+'
-    compile project(':vitamio')
-    compile 'com.jakewharton:butterknife:7.0.1'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
+
+    // Support
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:cardview-v7:23.4.0'
-    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha1'
+
+    // 注解
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.google.dagger:dagger:2.2'
+    apt 'com.google.dagger:dagger-compiler:2.2'
+
+    // 网络请求及图片加载
+    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'com.facebook.fresco:fresco:0.10.0'
     compile 'com.github.bumptech.glide:glide:3.6.1'
-    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
-    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
-    compile 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
     compile 'jp.wasabeef:recyclerview-animators:1.3.0'
     compile 'jp.wasabeef:glide-transformations:1.3.1'
+
+    // 其他
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     compile 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:1.0.4'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha1'
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:1.10.19'
+    compile 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
+    //compile 'com.github.chrisbanes.photoview:library:1.2.+'
+
+    // Project
+    compile project(':vitamio')
 }

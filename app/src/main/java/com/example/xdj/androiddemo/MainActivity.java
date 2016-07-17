@@ -9,6 +9,7 @@ import android.view.View;
 import com.example.xdj.androiddemo.broadcastreceiver.BroadcastReceveierActivity;
 import com.example.xdj.androiddemo.cardview.CardViewActivity;
 import com.example.xdj.androiddemo.customview.CustomViewActivity;
+import com.example.xdj.androiddemo.dagger.DaggerActivity;
 import com.example.xdj.androiddemo.download.DownloadManagerActivity;
 import com.example.xdj.androiddemo.event.EventActivity;
 import com.example.xdj.androiddemo.fresco.FrescoActivity;
@@ -134,6 +135,8 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, TipViewActivity.class);
         } else if (id == R.id.download_tv) {
             intent = new Intent(mContext, DownloadManagerActivity.class);
+        } else if (id == R.id.dagger_tv) {
+            intent = new Intent(mContext, DaggerActivity.class);
         }
 
         startActivity(intent);
