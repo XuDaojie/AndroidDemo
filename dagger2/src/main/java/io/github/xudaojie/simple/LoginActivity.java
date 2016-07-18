@@ -1,4 +1,4 @@
-package io.github.xudaojie.login;
+package io.github.xudaojie.simple;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,14 +10,12 @@ import io.github.xudaojie.util.ActivityUtils;
 
 /**
  * Created by xdj on 16/7/17.
- * Dagger2
+ * 如果需要注入的对象都可通过默认的无产构造函数生成,则可无需Module
  */
 public class LoginActivity extends AppCompatActivity {
 
     @Inject
     LoginPresenter mLoginPresenter;
-    @Inject
-    LoginEmptyPresenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 //        new LoginPresenter(loginFragment);
-        DaggerLoginComponent.builder()
-                .loginPresenterModule(new LoginPresenterModule(loginFragment))
-                .build()
-                .inject(this);
+        DaggerLoginComponent.create()
+                .inject(LoginActivity.this);
     }
 }
