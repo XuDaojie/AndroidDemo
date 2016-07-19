@@ -1,1 +1,1 @@
-include ':app', ':vitamio', ':aninator', ':dagger2', ':drawable'
+include ':app', ':vitamio', ':aninator', ':dagger2', ':drawable', ':kotlin'

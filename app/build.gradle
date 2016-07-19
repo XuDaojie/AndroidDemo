@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.neenbedankt.android-apt' // 注解处理
 
 android {
@@ -37,6 +38,9 @@ android {
         Wandoujia {
             manifestPlaceholders = [UMENG_CHANNEL: "wandoujia"]
         }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
     }
 
 }
@@ -78,4 +82,5 @@ dependencies {
 
     // Project
     compile project(':vitamio')
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
