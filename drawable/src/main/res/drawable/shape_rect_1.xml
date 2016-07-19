@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- 内容区域颜色 -->
+    <solid android:color="@color/colorPrimary" />
+    <!--<stroke android:color="@android:color/holo_red_light"   边框颜色-->
+        <!--android:width="2dp"                                 边框宽度-->
+        <!--android:dashWidth="20dp"                            每一端边框的长度，为0则为实线-->
+        <!--android:dashGap="10dp" />                           虚线间隙宽度 dashWidth > 0时才有效-->
+    <stroke android:color="@android:color/holo_red_light"
+        android:width="2dp"
+        android:dashWidth="20dp"
+        android:dashGap="10dp" />
+</shape>

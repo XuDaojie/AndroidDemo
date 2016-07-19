@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/colorPrimary" />   <!--内容区域颜色-->
+    <!--<corners android:topLeftRadius="50dp" />        圆角半径-->
+    <!--                                                预览时可能会报错，但是不影响-->
+    <corners android:topLeftRadius="50dp"
+        android:topRightRadius="10dp"/>
+    <!--<stroke android:width="1dp"                     边框宽度-->
+    <!--    android:color="@color/colorPrimaryDark"/>   边框颜色-->
+    <!--    android:dashWidth="20dp"                    每一端边框的长度，为0则为实线-->
+    <!--    android:dashGap="10dp"/>                    虚线间隙宽度 dashWidth > 0时才有效-->
+    <stroke android:width="2dp"
+        android:color="@color/colorPrimaryDark"
+        android:dashWidth="20dp"
+        android:dashGap="10dp"/>
+    <!--                                                        颜色渐变-->
+    <!--<gradient android:startColor="@color/colorPrimary"      起始颜色-->
+        <!--android:endColor="@android:color/holo_red_light"    结束颜色-->
+        <!--android:angle="45"/>                                角度 为0时为从左到右-->
+    <gradient android:startColor="@color/colorPrimary"
+        android:endColor="@android:color/holo_red_light"
+        android:angle="45"/>
+    <!--                                                        与View的padding属性效果一直,如果View也设置了padding则以View设置的为准-->
+    <padding android:bottom="20dp"
+        android:left="10dp"/>
+</shape>
