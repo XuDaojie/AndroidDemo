@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.github.xudaojie.androiddemo">
+          package="io.github.xudaojie.androiddemo">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission
@@ -108,6 +108,11 @@
         <receiver android:name=".download.NotificationClickReceiver">
             <intent-filter>
                 <action android:name="notification_clicked"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".download.OkHttpReceiver">
+            <intent-filter>
+                <action android:name="ok_http_download"/>
             </intent-filter>
         </receiver>
 

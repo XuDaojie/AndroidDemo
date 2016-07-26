@@ -6,10 +6,12 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Environment;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 import com.squareup.okhttp.Callback;
@@ -39,6 +41,8 @@ public class OkDownloadManager extends Service {
     private String url = "http://pkg3.fir.im/71da3de01a28cff3f9884ada102e22fdbadaab35.apk?attname=app-release.apk_1.0.apk";
 
     private Context mContext;
+    private LocalBroadcastManager mBroadcastManager;
+    private int mPercent = 0;
 
     @Override
     public void onCreate() {
@@ -56,20 +60,29 @@ public class OkDownloadManager extends Service {
                                     .body(new ProgressResponseBody(response.body(), new ProgressResponseBody.ProgressListener() {
                                         @Override
                                         public void update(long bytesRead, long contentLength, boolean done) {
-                                            Log.d("xxx", bytesRead + "/" + contentLength);
+                                            int percent = (int) ((float)bytesRead / contentLength * 100);
+                                            // 广播接收也是在主界面执行的,全部发送的话会造成系统卡顿
+                                            if (percent != mPercent) {
+                                                mPercent = percent;
+                                                Intent i = new Intent();
+                                                i.setAction("ok_http_download");
+                                                i.putExtra("percent", percent);
+                                                // 必须也使用LocalBroadcastReceiver进行注册
+                                                mBroadcastManager.sendBroadcast(i);
+                                            }
+
                                         }
                                     }))
                                     .build();
                         }
                     });
+            mBroadcastManager = LocalBroadcastManager.getInstance(mContext);
+
+            OkHttpReceiver okHttpReceiver = new OkHttpReceiver();
+            IntentFilter filter = new IntentFilter();
+            filter.addAction("ok_http_download");
+            mBroadcastManager.registerReceiver(okHttpReceiver, filter);
         }
-
-//        IntentFilter filter = new IntentFilter();
-//        filter.addAction("notification_clicked");
-//        filter.addAction("android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED");
-
-//        NotificationClickReceiver receiver = new NotificationClickReceiver();
-//        mContext.registerReceiver(receiver, filter);
 
         Intent i = new Intent(mContext, NotificationClickReceiver.class);
         i.setAction("notification_clicked");
@@ -121,7 +134,6 @@ public class OkDownloadManager extends Service {
                     public void onResponse(Response response) throws IOException {
                         Log.d("xxx", "xxxxxxxxxxxxxx");
                         saveFile(Environment.getExternalStorageDirectory() + "/Download/okhttp.apk", response.body().byteStream());
-                        stopSelf();
                     }
                 });
 
