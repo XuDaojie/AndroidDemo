@@ -3,6 +3,7 @@ package io.github.xudaojie.androiddemo.download;
 import android.Manifest;
 import android.app.DownloadManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -76,7 +77,24 @@ public class DownloadManagerActivity extends BaseActivity {
         okDownloadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OkDownloadManager okDownloadManager = new OkDownloadManager(mContext);
+                // 判断是否已获得权限
+                if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    // 权限申请曾被拒绝,给用户提示
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(
+                            DownloadManagerActivity.this,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE))  {
+                        Toast.makeText(mContext, "请在设置中打开文件读写权限", Toast.LENGTH_SHORT).show();
+                    } else {
+                        ActivityCompat.requestPermissions(DownloadManagerActivity.this,
+                                new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                                EXTERNAL_STORAGE_REQ_CODE);
+                    }
+                } else {
+                    Intent i = new Intent(mContext, OkDownloadManager.class);
+                    startService(i);
+                }
+
             }
         });
 
