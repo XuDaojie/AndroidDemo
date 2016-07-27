@@ -93,6 +93,20 @@ public class DownloadManagerActivity extends BaseActivity {
                 } else {
                     Intent i = new Intent(mContext, OkDownloadManager.class);
                     startService(i);
+//                    bindService(i, new ServiceConnection() {
+//                        @Override
+//                        public void onServiceConnected(ComponentName name, IBinder service) {
+//                            Log.d("bindService", "ServiceConnection");
+//                            OkDownloadManager downloadManager = ((OkDownloadManager.MyBunder)service).getService();
+//                            downloadManager.download();
+//                        }
+//
+//                        @Override
+//                        public void onServiceDisconnected(ComponentName name) {
+//
+//                        }
+//                    },
+//                    Context.BIND_AUTO_CREATE);
                 }
 
             }

@@ -14,7 +14,17 @@ import io.github.xudaojie.androiddemo.R;
  * Created by xdj on 16/7/26.
  */
 
-public class OkHttpReceiver extends BroadcastReceiver {
+public class OkDownloadReceiver extends BroadcastReceiver {
+
+    /**
+     * 消息被点击
+     */
+    public static final String NOTIFICATION_CLICK = "action.NOTIFICATION_CLICK";
+    /**
+     * 下载进度改变时
+     */
+    public static final String PERCENT_CHANGE = "action.PERCENT_CHANGE";
+
     @Override
     public void onReceive(Context context, Intent intent) {
         int percent = intent.getIntExtra("percent", 0);

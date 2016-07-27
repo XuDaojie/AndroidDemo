@@ -7,6 +7,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Binder;
 import android.os.Environment;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
@@ -30,7 +31,6 @@ import io.github.xudaojie.androiddemo.R;
 /**
  * Created by xdj on 16/7/25.
  */
-
 public class OkDownloadManager extends Service {
 
     private static OkHttpClient mHttpClient;
@@ -54,7 +54,8 @@ public class OkDownloadManager extends Service {
             mHttpClient.networkInterceptors()
                     .add(new Interceptor() {
                         @Override
-                        public Response intercept(Chain chain) throws IOException {
+                        public Response intercept(final Chain chain) throws IOException {
+
                             Response response = chain.proceed(chain.request());
                             return response.newBuilder()
                                     .body(new ProgressResponseBody(response.body(), new ProgressResponseBody.ProgressListener() {
@@ -63,11 +64,16 @@ public class OkDownloadManager extends Service {
                                             int percent = (int) ((float)bytesRead / contentLength * 100);
                                             // 广播接收也是在主界面执行的,全部发送的话会造成系统卡顿
                                             if (percent != mPercent) {
+                                                String url = chain.request().urlString();
+
                                                 mPercent = percent;
+
                                                 Intent i = new Intent();
                                                 i.setAction("ok_http_download");
                                                 i.putExtra("percent", percent);
-                                                // 必须也使用LocalBroadcastReceiver进行注册
+                                                i.putExtra("url", chain.request().urlString());
+
+                                                // 必须也使用LocalBroadcastReceiver进行注册才能接收
                                                 mBroadcastManager.sendBroadcast(i);
                                             }
 
@@ -78,7 +84,7 @@ public class OkDownloadManager extends Service {
                     });
             mBroadcastManager = LocalBroadcastManager.getInstance(mContext);
 
-            OkHttpReceiver okHttpReceiver = new OkHttpReceiver();
+            OkDownloadReceiver okHttpReceiver = new OkDownloadReceiver();
             IntentFilter filter = new IntentFilter();
             filter.addAction("ok_http_download");
             mBroadcastManager.registerReceiver(okHttpReceiver, filter);
@@ -116,10 +122,17 @@ public class OkDownloadManager extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        Log.d("Service", "onBind");
+        return new MyBunder();
     }
 
-    private void download() {
+    @Override
+    public void onDestroy() {
+        Log.d("Service", "onDestroy");
+        super.onDestroy();
+    }
+
+    public void download() {
         Request request = new Request.Builder()
                 .url(url)
                 .get()
@@ -155,6 +168,12 @@ public class OkDownloadManager extends Service {
             fos.flush();
             fos.close();
             stream.close();
+        }
+    }
+
+    class MyBunder extends Binder {
+        public OkDownloadManager getService() {
+            return OkDownloadManager.this;
         }
     }
 

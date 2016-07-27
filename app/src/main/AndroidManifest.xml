@@ -110,7 +110,7 @@
                 <action android:name="notification_clicked"/>
             </intent-filter>
         </receiver>
-        <receiver android:name=".download.OkHttpReceiver">
+        <receiver android:name=".download.OkDownloadReceiver">
             <intent-filter>
                 <action android:name="ok_http_download"/>
             </intent-filter>
