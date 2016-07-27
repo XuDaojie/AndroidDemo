@@ -35,7 +35,7 @@ public class DownloadManagerActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.download_manager_activity);
 
-        Button downloadBtn = (Button) findViewById(R.id.download_btn);
+        final Button downloadBtn = (Button) findViewById(R.id.download_btn);
         Button okDownloadBtn = (Button) findViewById(R.id.ok_download_btn);
         downloadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,19 +91,26 @@ public class DownloadManagerActivity extends BaseActivity {
                                 EXTERNAL_STORAGE_REQ_CODE);
                     }
                 } else {
+//                    OkDownloadManager downloadManager = OkDownloadManager.getDownloadManager(mContext);
+//                    downloadManager.download(10, url);
+
                     Intent i = new Intent(mContext, OkDownloadManager.class);
+                    i.putExtra("id", (int) System.currentTimeMillis());
+                    i.putExtra("url", url);
                     startService(i);
 //                    bindService(i, new ServiceConnection() {
 //                        @Override
 //                        public void onServiceConnected(ComponentName name, IBinder service) {
-//                            Log.d("bindService", "ServiceConnection");
+//                            Log.d("bindService", "onServiceConnected");
+//
 //                            OkDownloadManager downloadManager = ((OkDownloadManager.MyBunder)service).getService();
-//                            downloadManager.download();
+//                            downloadManager.download((int) System.currentTimeMillis(), url);
+//                            Log.d("DownloadManagerActivity", downloadManager.toString());
 //                        }
 //
 //                        @Override
 //                        public void onServiceDisconnected(ComponentName name) {
-//
+//                            Log.d("bindService", "onServiceDisconnected");
 //                        }
 //                    },
 //                    Context.BIND_AUTO_CREATE);

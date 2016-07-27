@@ -28,6 +28,8 @@ public class OkDownloadReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         int percent = intent.getIntExtra("percent", 0);
+        int id = intent.getIntExtra("id", 0);
+        String title = intent.getStringExtra("title");
         Log.d("OkHttpReceiver", percent + "%");
 
         Notification notification = new NotificationCompat.Builder(context)
@@ -37,8 +39,9 @@ public class OkDownloadReceiver extends BroadcastReceiver {
                 .setSmallIcon(R.mipmap.ic_launcher) // 必须设置
 //                .setContentIntent(pendingIntent)
                 .build();
+//        notification.flags = Notification.FLAG_AUTO_CANCEL;
 
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        manager.notify(10, notification);
+        manager.notify(id, notification);
     }
 }
