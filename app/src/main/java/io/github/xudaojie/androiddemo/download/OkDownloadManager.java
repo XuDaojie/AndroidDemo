@@ -1,6 +1,5 @@
 package io.github.xudaojie.androiddemo.download;
 
-import android.app.DownloadManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -36,28 +35,22 @@ import io.github.xudaojie.androiddemo.R;
  */
 public class OkDownloadManager extends Service {
 
+    private static final String TAG = "OkDownloadManager";
+
     private static OkHttpClient mHttpClient;
-
-    private static final int mId = 10;
-
-//    private String url = "https://qd.xmyapp.com/myapp/qqteam/AndroidQQ/mobileqq_android.apk";
-    private String url = "http://pkg3.fir.im/71da3de01a28cff3f9884ada102e22fdbadaab35.apk?attname=app-release.apk_1.0.apk";
 
     private Context mContext;
     private LocalBroadcastManager mBroadcastManager;
-    private int mPercent = 0;
 
     private long mTimeline; // 上次发送广播的时间
-    private Map<String, Integer> mQueues; // 已开始下载的链接
+    private String mUrl; // 正在进行下载的链接
 
     @Override
     public void onCreate() {
         super.onCreate();
         mContext = this;
-        if (mQueues == null) {
-            mQueues = new HashMap<>();
-        }
         Log.d("Service", "onCreate");
+
         if (mHttpClient == null) {
             mHttpClient = new OkHttpClient();
             mHttpClient.networkInterceptors()
@@ -77,8 +70,12 @@ public class OkDownloadManager extends Service {
                                             // 广播接收也是在主界面执行的,全部发送的话会造成系统卡顿
                                             long currentTimeline = System.currentTimeMillis();
                                             if (currentTimeline - mTimeline > 600 || done) {
+
+                                                if (done) {
+                                                    mUrl = null;
+                                                }
+
                                                 mTimeline = currentTimeline;
-                                                mPercent = percent;
                                                 int id = 0;
                                                 if (tagMap != null && tagMap.get("id") != null) {
                                                     id = (int) tagMap.get("id");
@@ -116,7 +113,8 @@ public class OkDownloadManager extends Service {
         if (intent != null && intent.hasExtra("id") && intent.hasExtra("url")) {
             int id = intent.getIntExtra("id", 0);
             String url = intent.getStringExtra("url");
-            download(id, url);
+            String fileName = intent.getStringExtra("fileName");
+            download(id, url, fileName);
         } else {
             // 服务尚未停止Apk被回收,会再度启动Service
             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -131,7 +129,7 @@ public class OkDownloadManager extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         Log.d("Service", "onBind");
-        return new MyBunder();
+        return new MyBinder();
     }
 
     @Override
@@ -146,13 +144,17 @@ public class OkDownloadManager extends Service {
         super.onDestroy();
     }
 
-    public void download(int id, String url) {
-        Integer state = mQueues.get(url);
-        if (state != null) return;
+    public void download(int id, String url, final String fileName) {
+        if (mUrl != null) {
+            Log.d(TAG, "同时只能进行一个下载");
+            return;
+        }
+
+        mUrl = url;
 
         Intent i = new Intent(mContext, NotificationClickReceiver.class);
         i.setAction("notification_clicked");
-        i.putExtra("type", mId);
+        i.putExtra("type", id);
 //        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
         // 广播必须在Manifest里注册,代码注册无效
         PendingIntent pendingIntent = PendingIntent.getBroadcast(mContext, 0, i, PendingIntent.FLAG_ONE_SHOT);
@@ -191,11 +193,9 @@ public class OkDownloadManager extends Service {
 
                     @Override
                     public void onResponse(Response response) throws IOException {
-                        saveFile(Environment.getExternalStorageDirectory() + "/Download/okhttp.apk", response.body().byteStream());
+                        saveFile(Environment.getExternalStorageDirectory() + "/Download/" + fileName, response.body().byteStream());
                     }
                 });
-
-        mQueues.put(url, DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
     }
 
     private void saveFile(String outPath, InputStream stream) throws IOException {
@@ -217,7 +217,7 @@ public class OkDownloadManager extends Service {
         }
     }
 
-    class MyBunder extends Binder {
+    class MyBinder extends Binder {
         public OkDownloadManager getService() {
             return OkDownloadManager.this;
         }

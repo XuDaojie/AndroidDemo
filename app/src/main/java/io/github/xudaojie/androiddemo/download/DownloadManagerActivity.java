@@ -36,7 +36,8 @@ public class DownloadManagerActivity extends BaseActivity {
         setContentView(R.layout.download_manager_activity);
 
         final Button downloadBtn = (Button) findViewById(R.id.download_btn);
-        Button okDownloadBtn = (Button) findViewById(R.id.ok_download_btn);
+        Button okDownloadBtn1 = (Button) findViewById(R.id.ok_download_btn1);
+        Button okDownloadBtn2 = (Button) findViewById(R.id.ok_download_btn2);
         downloadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +75,7 @@ public class DownloadManagerActivity extends BaseActivity {
             }
         });
 
-        okDownloadBtn.setOnClickListener(new View.OnClickListener() {
+        okDownloadBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 判断是否已获得权限
@@ -93,11 +94,35 @@ public class DownloadManagerActivity extends BaseActivity {
                 } else {
 //                    OkDownloadManager downloadManager = OkDownloadManager.getDownloadManager(mContext);
 //                    downloadManager.download(10, url);
+                    String url = "https://qd.myapp.com/myapp/qqteam/AndroidQQ/mobileqq_android.apk";
 
                     Intent i = new Intent(mContext, OkDownloadManager.class);
                     i.putExtra("id", (int) System.currentTimeMillis());
                     i.putExtra("url", url);
+                    i.putExtra("fileName", "test.apk");
                     startService(i);
+
+//                    SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(getFilesDir() + "/test.db", null);
+//                    db.beginTransaction();
+//                    db.execSQL("CREATE TABLE t_download_manager (\n" +
+//                            "    allow_write Boolean, \n" +
+//                            "    id integer, \n" +
+//                            "    last_modify_timestamp integer, \n" +
+//                            "    local_filename varchar, \n" +
+//                            "    local_uri varchar, \n" +
+//                            "    media_type varchar, \n" +
+//                            "    media_provider_uri varchar, \n" +
+//                            "    reason varchar, \n" +
+//                            "    status integer, \n" +
+//                            "    title varchar, \n" +
+//                            "    total_size_bytes integer, \n" +
+//                            "    uri varchar\n" +
+//                            ")");
+//                    db.endTransaction();
+
+//                    db.rawQuery("select * from t_download_manager\n" +
+//                            "where id = 1", null);
+
 //                    bindService(i, new ServiceConnection() {
 //                        @Override
 //                        public void onServiceConnected(ComponentName name, IBinder service) {
@@ -114,6 +139,32 @@ public class DownloadManagerActivity extends BaseActivity {
 //                        }
 //                    },
 //                    Context.BIND_AUTO_CREATE);
+                }
+
+            }
+        });
+        okDownloadBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 判断是否已获得权限
+                if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    // 权限申请曾被拒绝,给用户提示
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(
+                            DownloadManagerActivity.this,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE))  {
+                        Toast.makeText(mContext, "请在设置中打开文件读写权限", Toast.LENGTH_SHORT).show();
+                    } else {
+                        ActivityCompat.requestPermissions(DownloadManagerActivity.this,
+                                new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                                EXTERNAL_STORAGE_REQ_CODE);
+                    }
+                } else {
+                    String url = "http://pkg3.fir.im/71da3de01a28cff3f9884ada102e22fdbadaab35.apk?attname=app-release.apk_1.0.apk";
+                    Intent i = new Intent(mContext, OkDownloadManager.class);
+                    i.putExtra("id", (int) System.currentTimeMillis());
+                    i.putExtra("url", url);
+                    startService(i);
                 }
 
             }
