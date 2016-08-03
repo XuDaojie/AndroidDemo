@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -94,31 +95,31 @@ public class DownloadManagerActivity extends BaseActivity {
                 } else {
 //                    OkDownloadManager downloadManager = OkDownloadManager.getDownloadManager(mContext);
 //                    downloadManager.download(10, url);
-                    String url = "https://qd.myapp.com/myapp/qqteam/AndroidQQ/mobileqq_android.apk";
+//                    String url = "https://qd.myapp.com/myapp/qqteam/AndroidQQ/mobileqq_android.apk";
+//
+//                    Intent i = new Intent(mContext, OkDownloadManager.class);
+//                    i.putExtra("id", (int) System.currentTimeMillis());
+//                    i.putExtra("url", url);
+//                    i.putExtra("fileName", "test.apk");
+//                    startService(i);
 
-                    Intent i = new Intent(mContext, OkDownloadManager.class);
-                    i.putExtra("id", (int) System.currentTimeMillis());
-                    i.putExtra("url", url);
-                    i.putExtra("fileName", "test.apk");
-                    startService(i);
-
-//                    SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(getFilesDir() + "/test.db", null);
-//                    db.beginTransaction();
-//                    db.execSQL("CREATE TABLE t_download_manager (\n" +
-//                            "    allow_write Boolean, \n" +
-//                            "    id integer, \n" +
-//                            "    last_modify_timestamp integer, \n" +
-//                            "    local_filename varchar, \n" +
-//                            "    local_uri varchar, \n" +
-//                            "    media_type varchar, \n" +
-//                            "    media_provider_uri varchar, \n" +
-//                            "    reason varchar, \n" +
-//                            "    status integer, \n" +
-//                            "    title varchar, \n" +
-//                            "    total_size_bytes integer, \n" +
-//                            "    uri varchar\n" +
-//                            ")");
-//                    db.endTransaction();
+                    SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(getFilesDir() + "/test.db", null);
+                    db.beginTransaction();
+                    db.execSQL("CREATE TABLE t_download_manager (\n" +
+                            "    allow_write Boolean, \n" +
+                            "    id integer, \n" +
+                            "    last_modify_timestamp integer, \n" +
+                            "    local_filename varchar, \n" +
+                            "    local_uri varchar, \n" +
+                            "    media_type varchar, \n" +
+                            "    media_provider_uri varchar, \n" +
+                            "    reason varchar, \n" +
+                            "    status integer, \n" +
+                            "    title varchar, \n" +
+                            "    total_size_bytes integer, \n" +
+                            "    uri varchar\n" +
+                            ")");
+                    db.endTransaction();
 
 //                    db.rawQuery("select * from t_download_manager\n" +
 //                            "where id = 1", null);

@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import io.github.xudaojie.androiddemo.bottomsheet.BottomSheetActivity;
 import io.github.xudaojie.androiddemo.broadcastreceiver.BroadcastReceveierActivity;
 import io.github.xudaojie.androiddemo.cardview.CardViewActivity;
 import io.github.xudaojie.androiddemo.customview.CustomViewActivity;
@@ -137,6 +138,8 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, DownloadManagerActivity.class);
         } else if (id == R.id.dagger_tv) {
             intent = new Intent(mContext, DaggerActivity.class);
+        } else if (id == R.id.bottom_sheet_tv) {
+            intent = new Intent(mContext, BottomSheetActivity.class);
         }
 
         startActivity(intent);
