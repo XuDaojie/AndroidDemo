@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Behavior</string>
+
+    <string name="footer_behavior" translatable="false">io.github.xudaojie.behavior.FooterBehavior</string>
 </resources>
