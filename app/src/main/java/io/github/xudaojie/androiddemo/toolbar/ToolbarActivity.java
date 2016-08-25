@@ -27,8 +27,9 @@ public class ToolbarActivity extends BaseActivity {
         mToolbar.inflateMenu(R.menu.menu_main);
         mToolbar.setTitle("Title");
         //设置导航按钮
-        mToolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
-        //mToolbar.setNavigationIcon(R.drawable.abc_ic_launcher);
+//        mToolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+//        mToolbar.setNavigationIcon(R.drawable.abc_ic_launcher);
+        mToolbar.setNavigationIcon(R.drawable.ic_menu_manage);
         //
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
