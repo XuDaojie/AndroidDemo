@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/action_shape" android:title="shape" />
+    <group>
+        <item android:id="@+id/action_shape_rect" android:title="Rect" />
+        <item android:id="@+id/action_shape_oval" android:title="Oval" />
+        <item android:id="@+id/action_shape_line" android:title="Line" />
+    </group>
+
     <item android:id="@+id/action_layer_list" android:title="layer-list" />
 </menu>

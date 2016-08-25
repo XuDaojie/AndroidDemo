@@ -28,8 +28,14 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         switch (id) {
-            case R.id.action_shape:
-                ft.replace(R.id.container, new ShapeFragment());
+            case R.id.action_shape_rect:
+                ft.replace(R.id.container, new ShapeRectFragment());
+                break;
+            case R.id.action_shape_oval:
+                ft.replace(R.id.container, new ShapeOvalFragment());
+                break;
+            case R.id.action_shape_line:
+                ft.replace(R.id.container, new ShapeLineFragment());
                 break;
             case R.id.action_layer_list:
                 break;
