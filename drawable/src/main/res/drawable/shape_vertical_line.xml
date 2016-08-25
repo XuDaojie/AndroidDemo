@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:left="-400dp"
-        android:right="-400dp">
+    <item android:left="-320dp"
+        android:right="-320dp">
         <rotate
-            android:drawable="@drawable/shape_vertical_line_middle"
+            android:drawable="@drawable/shape_line"
             android:visible="true"
             android:fromDegrees="-90"
             android:toDegrees="-90"
