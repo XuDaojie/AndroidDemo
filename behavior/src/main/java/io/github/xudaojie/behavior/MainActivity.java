@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Activity mContext;
 
     private RecyclerView mRecyclerView;
+    private View mBottomView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         mContext = this;
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mBottomView = findViewById(R.id.bottom_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(new ListAdapter());
     }
@@ -49,9 +51,17 @@ public class MainActivity extends AppCompatActivity {
 
     class ListAdapter extends RecyclerView.Adapter {
 
+        private static final int ITEM_CONTENT = 0;
+        private static final int ITEM_FOOT = 1;
+
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(mContext).inflate(R.layout.main_item, parent, false);
+            View view;
+            if (viewType == ITEM_CONTENT) {
+                view = LayoutInflater.from(mContext).inflate(R.layout.main_item, parent, false);
+            } else {
+                view = LayoutInflater.from(mContext).inflate(R.layout.empty_item, parent, false);
+            }
             return new MyViewHolder(view);
         }
 
@@ -61,9 +71,17 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return 30;
+            return 16 + 1;
         }
 
+        @Override
+        public int getItemViewType(int position) {
+            super.getItemViewType(position);
+            if (position == getItemCount() - 1) {
+                return ITEM_FOOT;
+            }
+            return ITEM_CONTENT;
+        }
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
