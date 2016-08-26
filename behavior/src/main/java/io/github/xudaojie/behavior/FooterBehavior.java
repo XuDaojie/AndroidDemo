@@ -65,7 +65,7 @@ public class FooterBehavior extends CoordinatorLayout.Behavior {
 
         if (target instanceof RecyclerView) {
             RecyclerView recyclerView = (RecyclerView) target;
-
+            // 通过Tag判断是否已添加滚动事件监听
             if (recyclerView.getTag() == null) {
                 RecyclerView.OnScrollListener onScrollListener = new RecyclerView.OnScrollListener() {
                     @Override
