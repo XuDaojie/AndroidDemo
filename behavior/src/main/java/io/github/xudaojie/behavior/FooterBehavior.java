@@ -1,5 +1,8 @@
 package io.github.xudaojie.behavior;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.RecyclerView;
@@ -14,6 +17,11 @@ import android.view.View;
 public class FooterBehavior extends CoordinatorLayout.Behavior {
 
     private static final String TAG = "FooterBehavior";
+
+    private AnimatorSet mAnimatorSetIn;
+    private AnimatorSet mAnimatorSetOut;
+
+    private Animator mCurrentAnim;
 
     public FooterBehavior(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -123,14 +131,30 @@ public class FooterBehavior extends CoordinatorLayout.Behavior {
     }
 
     private void animationIn(View child) {
-        if (child.getVisibility() == View.GONE) {
-            child.setVisibility(View.VISIBLE);
+        Log.d(TAG, "animationIn");
+        if (mAnimatorSetIn == null) {
+            mAnimatorSetIn = new AnimatorSet();
+            mAnimatorSetIn
+                    .play(ObjectAnimator.ofFloat(child, View.TRANSLATION_Y, 0));
+            mAnimatorSetIn.setDuration(300);
+        }
+        if (mCurrentAnim != mAnimatorSetIn) {
+            mAnimatorSetIn.start();
+            mCurrentAnim = mAnimatorSetIn;
         }
     }
 
     private void animationOut(View child) {
-        if (child.getVisibility() == View.VISIBLE) {
-            child.setVisibility(View.GONE);
+        Log.d(TAG, "animationOut");
+        if (mAnimatorSetOut == null) {
+            mAnimatorSetOut = new AnimatorSet();
+            mAnimatorSetOut
+                    .play(ObjectAnimator.ofFloat(child, View.TRANSLATION_Y, child.getHeight()));
+            mAnimatorSetOut.setDuration(300);
+        }
+        if (mCurrentAnim != mAnimatorSetOut) {
+            mAnimatorSetOut.start();
+            mCurrentAnim = mAnimatorSetOut;
         }
     }
 }
