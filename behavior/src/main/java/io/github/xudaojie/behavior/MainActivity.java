@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private Activity mContext;
 
     private RecyclerView mRecyclerView;
-    private View mBottomView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         mContext = this;
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        mBottomView = findViewById(R.id.bottom_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(new ListAdapter());
     }
@@ -71,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return 16 + 1;
+            return 8 + 1;
         }
 
         @Override
