@@ -2,19 +2,31 @@ package io.github.xudaojie.rxjava;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import java.util.ArrayList;
+
+import rx.Observable;
+import rx.Observer;
+import rx.functions.Action1;
+import rx.functions.Func1;
+import rx.functions.Func2;
+import rx.functions.FuncN;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,9 +95,96 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
+            Observable.just(1, 2, 3, 4, 5)
+                    .scan(new Func2<Integer, Integer, Integer>() {
+                        @Override
+                        public Integer call(Integer integer, Integer integer2) {
+                            return integer + integer2;
+                        }
+                    })
+                    .subscribe(new Observer<Integer>() {
+                        @Override
+                        public void onCompleted() {
+                            Log.d(TAG, "onCompleted");
+                        }
 
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.d(TAG, e.getMessage());
+                        }
+
+                        @Override
+                        public void onNext(Integer integer) {
+                            Log.d(TAG, integer.toString());
+                        }
+                    });
         } else if (id == R.id.nav_slideshow) {
+            ArrayList<Observable<Integer>> observables = new ArrayList<>();
+            for (int i = 0; i <= 5; i++) {
+                observables.add(Observable.just(i));
+            }
 
+            Observable.zip(observables, new FuncN<String>() {
+                @Override
+                public String call(Object... args) {
+                    String resultString = "";
+                    for (Object arg:
+                         args) {
+                        resultString = resultString + "," + arg.toString();
+                    }
+                    return resultString;
+                }
+            })
+                    .flatMap(new Func1<String, Observable<String>>() {
+                        @Override
+                        public Observable<String> call(String s) {
+                            Log.d(TAG, "图片id:" + s);
+                            return Observable.just("模拟请求接口");
+                        }
+                    })
+                    .subscribe(new Action1<String>() {
+                        @Override
+                        public void call(String s) {
+                            Log.d(TAG, s);
+                        }
+                    });
+//            Observable.just(1, 2, 3, 4, 5)
+//                    .doOnUnsubscribe(new Action0() {
+//                        @Override
+//                        public void call() {
+//                            Log.d(TAG, "doOnUnsubscribe");
+//                        }
+//                    })
+//                    .doOnNext(new Action1<Integer>() {
+//                        @Override
+//                        public void call(Integer integer) {
+//                            Log.d(TAG, integer.toString());
+//                        }
+//                    })
+//                    .subscribe();
+
+//                    .scan(new Func2<Integer, Integer, Integer>() {
+//                        @Override
+//                        public Integer call(Integer integer, Integer integer2) {
+//                            return integer + integer2;
+//                        }
+//                    })
+//                    .subscribe(new Observer<Integer>() {
+//                        @Override
+//                        public void onCompleted() {
+//                            Log.d(TAG, "onCompleted");
+//                        }
+//
+//                        @Override
+//                        public void onError(Throwable e) {
+//                            Log.d(TAG, e.getMessage());
+//                        }
+//
+//                        @Override
+//                        public void onNext(Integer integer) {
+//                            Log.d(TAG, integer.toString());
+//                        }
+//                    });
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

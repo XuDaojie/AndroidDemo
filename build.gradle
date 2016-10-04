@@ -14,7 +14,8 @@ buildscript {
     }
     ext {
         supportVersion = '24.2.1'
-        constraintVersion = "1.0.0-alpha8"
+        constraintVersion = '1.0.0-alpha8'
+        rxjavaVersion = '1.2.0'
     }
 }
 
