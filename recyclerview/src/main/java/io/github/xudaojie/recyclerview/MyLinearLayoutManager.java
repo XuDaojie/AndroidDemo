@@ -1,6 +1,7 @@
 package io.github.xudaojie.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -9,6 +10,11 @@ import android.view.ViewGroup;
  */
 
 public class MyLinearLayoutManager extends RecyclerView.LayoutManager {
+    private static final String TAG = MyLinearLayoutManager.class.getSimpleName();
+
+    private int mHeight;
+    private int mValidOffset;
+
     @Override
     public RecyclerView.LayoutParams generateDefaultLayoutParams() {
         return new RecyclerView.LayoutParams(
@@ -19,9 +25,11 @@ public class MyLinearLayoutManager extends RecyclerView.LayoutManager {
     @Override
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         super.onLayoutChildren(recycler, state);
+        if (getItemCount() == 0) {
+            removeAndRecycleAllViews(recycler);
+        }
 
         detachAndScrapAttachedViews(recycler);
-
         //定义竖直方向的偏移量
         int offsetY = 0;
         for (int i = 0; i < getItemCount(); i++) {
@@ -39,5 +47,32 @@ public class MyLinearLayoutManager extends RecyclerView.LayoutManager {
             //将竖直方向偏移量增大height
             offsetY += height;
         }
+        mHeight = offsetY;
+    }
+
+    @Override
+    public boolean canScrollVertically() {
+        return true;
+    }
+
+    @Override
+    public int scrollVerticallyBy(int dy, RecyclerView.Recycler recycler, RecyclerView.State state) {
+        return scrollBy(dy, recycler, state);
+    }
+
+
+    int scrollBy(int dy, RecyclerView.Recycler recycler, RecyclerView.State state) {
+        Log.d(TAG, mValidOffset + " + " + dy);
+        int scrolled = dy;
+
+        if (mValidOffset + dy > mHeight - getHeight()) {
+            scrolled = mHeight - mValidOffset - getHeight();
+        } else if (mValidOffset + dy < 0) {
+            scrolled = -mValidOffset;
+        }
+        mValidOffset += scrolled;
+
+        offsetChildrenVertical(-scrolled);
+        return scrolled;
     }
 }
