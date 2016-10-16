@@ -1,6 +1,7 @@
 package io.github.xudaojie.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,8 @@ import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter {
 
+    private static final String TAG = RecyclerAdapter.class.getSimpleName();
+
     List<String> mData = new ArrayList<>();
 
     public RecyclerAdapter() {
@@ -26,7 +29,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item, parent, false);
-        return new MyViewHolder(view);
+        MyViewHolder holder = new MyViewHolder(view);
+        Log.d(TAG, "onCreateViewHolder " + view.toString());
+        return holder;
     }
 
     @Override

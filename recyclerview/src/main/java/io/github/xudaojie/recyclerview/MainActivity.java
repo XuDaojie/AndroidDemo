@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+//        mRecyclerView.setLayoutManager(new TestLinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setLayoutManager(new MyLinearLayoutManager());
         mRecyclerView.setAdapter(new RecyclerAdapter());
 //        DiffUtil.
