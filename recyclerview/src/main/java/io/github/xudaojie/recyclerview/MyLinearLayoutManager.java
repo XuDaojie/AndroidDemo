@@ -34,33 +34,42 @@ public class MyLinearLayoutManager extends RecyclerView.LayoutManager {
         }
 
         detachAndScrapAttachedViews(recycler);
+
         //定义竖直方向的偏移量
         int offsetY = 0;
+        // 所有item等高等宽
+        int childHeight = 0;
+        int childWidth = 0;
         for (int i = 0; i < getItemCount(); i++) {
-            //这里就是从缓存里面取出 如果缓存中不存在则会创建新的ViewHolder
-            View view = recycler.getViewForPosition(i);
-            Log.d(TAG, "--" + view.toString());
-            //将View加入到RecyclerView中
-            addView(view);
-            //对子View进行测量
-            measureChildWithMargins(view, 0, 0);
-            //把宽高拿到，宽高都是包含ItemDecorate的尺寸
-            int width = getDecoratedMeasuredWidth(view);
-            int height = getDecoratedMeasuredHeight(view);
-            //最后，将View布局
-            layoutDecorated(view, 0, offsetY, width, offsetY + height);
+
+            //将竖直方向偏移量增大height
+            offsetY += childHeight;
+            if (offsetY < getVerticalSpace()) {
+                View view = getChildAt(i);
+                //这里就是从缓存里面取出 如果缓存中不存在则会创建新的ViewHolder
+                if (view == null) {
+                    view = recycler.getViewForPosition(i);
+                }
+                Log.d(TAG, "--" + view.toString());
+                //将View加入到RecyclerView中
+                addView(view);
+                //对子View进行测量
+                measureChildWithMargins(view, 0, 0);
+                //把宽高拿到，宽高都是包含ItemDecorate的尺寸
+                childWidth = getDecoratedMeasuredWidth(view);
+                childHeight = getDecoratedMeasuredHeight(view);
+                //最后，将View布局
+                layoutDecorated(view, 0, offsetY, childWidth, offsetY + childHeight);
+            }
 
             Rect frame = mItemFrames.get(i);
             if (frame == null) {
                 frame = new Rect();
             }
-            frame.set(0, offsetY, width, offsetY + height);
+            frame.set(0, offsetY, childWidth, offsetY + childHeight);
             mItemFrames.put(i, frame);
-
-            //将竖直方向偏移量增大height
-            offsetY += height;
         }
-        mTotalOffsetY = offsetY;
+        mTotalOffsetY = getItemCount() * childHeight;
     }
 
     @Override
@@ -70,9 +79,15 @@ public class MyLinearLayoutManager extends RecyclerView.LayoutManager {
 
     @Override
     public int scrollVerticallyBy(int dy, RecyclerView.Recycler recycler, RecyclerView.State state) {
+//        return super.scrollVerticallyBy(dy, recycler, state);
         return scrollBy(dy, recycler, state);
     }
 
+//    int scrollBy(int dy, RecyclerView.Recycler recycler, RecyclerView.State state) {
+//        int scrolled = dy;
+//        offsetChildrenVertical(-dy);
+//        return scrolled;
+//    }
 
     int scrollBy(int dy, RecyclerView.Recycler recycler, RecyclerView.State state) {
 //        Log.d(TAG, mValidOffset + " + " + dy);
@@ -105,7 +120,8 @@ public class MyLinearLayoutManager extends RecyclerView.LayoutManager {
                 childRect.bottom = getDecoratedBottom(child);
 
                 if (!Rect.intersects(displayRect, childRect)) {
-                    removeAndRecycleView(child, recycler);
+//                    removeAndRecycleView(child, recycler);
+//                    detachAndScrapView(child, recycler);
                 }
             }
             Log.d(TAG, "remove after --getChildCount " + getChildCount() + " " + "getItemCount" + getItemCount());
