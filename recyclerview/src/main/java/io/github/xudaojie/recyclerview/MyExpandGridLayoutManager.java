@@ -27,14 +27,6 @@ public class MyExpandGridLayoutManager extends RecyclerView.LayoutManager {
                 ViewGroup.LayoutParams.WRAP_CONTENT);
     }
 
-//    @Override
-//    public RecyclerView.LayoutParams generateLayoutParams(Context c, AttributeSet attrs) {
-//        return super.generateLayoutParams(c, attrs);
-//        return new RecyclerView.LayoutParams(
-//                ViewGroup.LayoutParams.WRAP_CONTENT,
-//                ViewGroup.LayoutParams.WRAP_CONTENT);
-//    }
-
     @Override
     public RecyclerView.LayoutParams generateLayoutParams(ViewGroup.LayoutParams lp) {
         return super.generateLayoutParams(lp);
@@ -66,16 +58,16 @@ public class MyExpandGridLayoutManager extends RecyclerView.LayoutManager {
             if (frame == null) {
                 frame = new Rect();
             }
-//            if (i % 6 == 0) {
-//                // Group
-//                // Grid未充满一行时
-//                if (gridPosition != 0) {
-//                    offsetY += childHeight;
-//                }
-//                frame.set(0, offsetY, groupWidth, offsetY + childHeight);
-//                offsetY += childHeight;
-//                gridPosition = 0;
-//            } else {
+            if (i % 6 == 0) {
+                // Group
+                // Grid未充满一行时
+                if (gridPosition != 0) {
+                    offsetY += childHeight;
+                }
+                frame.set(0, offsetY, groupWidth, offsetY + childHeight);
+                offsetY += childHeight;
+                gridPosition = 0;
+            } else {
                 // Child
                 frame.set(gridPosition * childWidth, offsetY, gridPosition * childWidth + childWidth, offsetY + childHeight);
                 if (gridPosition == 3) {
@@ -84,7 +76,7 @@ public class MyExpandGridLayoutManager extends RecyclerView.LayoutManager {
                 } else {
                     ++gridPosition;
                 }
-//            }
+            }
 //            frame.set(0, offsetY, childWidth, offsetY + childHeight);
             //将竖直方向偏移量增大height
             mItemFrames.put(i, frame);
@@ -192,7 +184,12 @@ public class MyExpandGridLayoutManager extends RecyclerView.LayoutManager {
                     measureChildWithMargins(scrap, 0, 0);
                     addView(scrap);
                 } else {
-                    // TODO: 2016/10/18
+                    // 必须要在计算宽高之前设置
+                    RecyclerView.LayoutParams lp = (RecyclerView.LayoutParams) scrap.getLayoutParams();
+                    lp.width = frame.right - frame.left;
+                    scrap.setLayoutParams(lp);
+                    measureChildWithMargins(scrap, 0, 0);
+                    // 重新触发bindView
                     recycler.bindViewToPosition(scrap, i);
                     addView(scrap);
                 }
