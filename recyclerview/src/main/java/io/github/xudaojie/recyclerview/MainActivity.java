@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 //        mRecyclerView.setLayoutManager(new TestLinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 //        mRecyclerView.setLayoutManager(new MyLinearLayoutManager());
-        mRecyclerView.setLayoutManager(new MyGridLayoutManager(4));
-//        mRecyclerView.setLayoutManager(new MyExpandGridLayoutManager());
+//        mRecyclerView.setLayoutManager(new MyGridLayoutManager(4));
+        mRecyclerView.setLayoutManager(new MyExpandGridLayoutManager());
         mRecyclerView.setAdapter(new RecyclerAdapter());
 //        DiffUtil.
     }

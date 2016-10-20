@@ -73,7 +73,7 @@ public class MyGridLayoutManager extends RecyclerView.LayoutManager {
                 ++gridPosition;
             }
             // 如果是最后一个
-           if (i == (getItemCount() - 1)) {
+            if (i == (getItemCount() - 1)) {
                 offsetY += childHeight;
             }
 //            frame.set(0, offsetY, childWidth, offsetY + childHeight);
