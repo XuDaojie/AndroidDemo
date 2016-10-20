@@ -13,6 +13,8 @@ buildscript {
         // in the individual module build.gradle files
     }
     ext {
+        buildTools = "24.0.3"
+
         supportVersion = '24.2.1'
         constraintVersion = '1.0.0-alpha8'
         rxjavaVersion = '1.2.0'
