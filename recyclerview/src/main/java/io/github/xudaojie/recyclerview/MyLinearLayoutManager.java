@@ -72,7 +72,7 @@ public class MyLinearLayoutManager extends RecyclerView.LayoutManager {
             offsetY += childHeight;
             mItemFrames.put(i, frame);
         }
-        mTotalOffsetY = getItemCount() * childHeight;
+        mTotalOffsetY = Math.max(offsetY, getHeight());
         fill(recycler, state);
     }
 
