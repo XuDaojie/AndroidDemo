@@ -21,7 +21,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
     List<String> mData = new ArrayList<>();
 
     public RecyclerAdapter() {
-        for (int i = 0; i < 300; i++) {
+        for (int i = 0; i < 61; i++) {
             mData.add("text" + i);
         }
     }

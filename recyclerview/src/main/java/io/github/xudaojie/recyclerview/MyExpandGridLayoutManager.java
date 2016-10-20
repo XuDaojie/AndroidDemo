@@ -76,6 +76,10 @@ public class MyExpandGridLayoutManager extends RecyclerView.LayoutManager {
                 } else {
                     ++gridPosition;
                 }
+                // 如果是最后一个
+                if (i == getItemCount() && gridPosition != 3) {
+                    offsetY += childHeight;
+                }
             }
 //            frame.set(0, offsetY, childWidth, offsetY + childHeight);
             //将竖直方向偏移量增大height
