@@ -15,10 +15,16 @@ import java.util.List;
 public class MyExpandGridLayoutManager extends RecyclerView.LayoutManager {
     private static final String TAG = MyExpandGridLayoutManager.class.getSimpleName();
 
+    private int mSpanCount;
+
     private int mTotalOffsetY;
     private int mValidOffset;
 
     private SparseArray<Rect> mItemFrames = new SparseArray<>();
+
+    public MyExpandGridLayoutManager(int spanCount) {
+        mSpanCount = spanCount;
+    }
 
     @Override
     public RecyclerView.LayoutParams generateDefaultLayoutParams() {
@@ -70,7 +76,7 @@ public class MyExpandGridLayoutManager extends RecyclerView.LayoutManager {
             } else {
                 // Child
                 frame.set(gridPosition * childWidth, offsetY, gridPosition * childWidth + childWidth, offsetY + childHeight);
-                if (gridPosition == 3) {
+                if (gridPosition == mSpanCount - 1) {
                     gridPosition = 0;
                     offsetY += childHeight;
                 } else {
