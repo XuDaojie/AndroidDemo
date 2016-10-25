@@ -99,6 +99,7 @@
         <activity android:name=".download.DownloadManagerActivity"/>
         <activity android:name=".dagger.DaggerActivity"/>
         <activity android:name=".bottomsheet.BottomSheetActivity"/>
+        <activity android:name=".event.Boss"/>
         <!--<activity-->
         <!--android:name=".Main2Activity"-->
         <!--android:label="@string/title_activity_main2"-->

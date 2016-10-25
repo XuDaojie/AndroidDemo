@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.github.xudaojie.androiddemo.event.Leader
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <io.github.xudaojie.androiddemo.event.AndroidDeveloper
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/holo_red_dark"
+        android:gravity="center"
+        android:text="Android Developer"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"/>
+
+    <!--<io.github.xudaojie.androiddemo.event.IOSDeveloper-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@android:color/holo_blue_dark"-->
+        <!--android:gravity="center"-->
+        <!--android:text="iOS Developer"-->
+        <!--android:textSize="22sp"-->
+        <!--android:textColor="@android:color/white"/>-->
+</io.github.xudaojie.androiddemo.event.Leader>

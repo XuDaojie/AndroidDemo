@@ -12,6 +12,7 @@ import io.github.xudaojie.androiddemo.cardview.CardViewActivity;
 import io.github.xudaojie.androiddemo.customview.CustomViewActivity;
 import io.github.xudaojie.androiddemo.dagger.DaggerActivity;
 import io.github.xudaojie.androiddemo.download.DownloadManagerActivity;
+import io.github.xudaojie.androiddemo.event.Boss;
 import io.github.xudaojie.androiddemo.event.EventActivity;
 import io.github.xudaojie.androiddemo.fresco.FrescoActivity;
 import io.github.xudaojie.androiddemo.frgament.FragmentActivity;
@@ -140,6 +141,8 @@ public class MainActivity extends BaseActivity {
             intent = new Intent(mContext, DaggerActivity.class);
         } else if (id == R.id.bottom_sheet_tv) {
             intent = new Intent(mContext, BottomSheetActivity.class);
+        } else if (id == R.id.event_dis_tv) {
+            intent = new Intent(mContext, Boss.class);
         }
 
         startActivity(intent);

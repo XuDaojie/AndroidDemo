@@ -8,9 +8,12 @@ import java.util.List;
 /**
  * Created by xdj on 2016/10/20.
  */
-
+// todo undone 未完成
 public class MyExpendGridAdapter<T extends RecyclerView.ViewHolder, E extends RecyclerView.ViewHolder>
         extends RecyclerView.Adapter {
+
+    private static final int GROUP = 0;
+    private static final int CHILD = 1;
 
     private List<Integer> mGroupPositions;
 
@@ -21,7 +24,11 @@ public class MyExpendGridAdapter<T extends RecyclerView.ViewHolder, E extends Re
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
+        if (GROUP == position) {
+            onBindGroupViewHolder((E) holder, position);
+        } else {
+            onBindGroupViewHolder((E) holder, position);
+        }
     }
 
     @Override
@@ -39,11 +46,20 @@ public class MyExpendGridAdapter<T extends RecyclerView.ViewHolder, E extends Re
     public int getItemViewType(int position) {
         int groupIdx = mGroupPositions.indexOf(position);
         if (groupIdx != -1) {
-            return getGroupType(groupIdx);
+            return GROUP;
         } else {
-            // 二分排序
+            // todo 二分排序
+            for (int i = 0; i < mGroupPositions.size() - 2; i++) {
+                int left = mGroupPositions.get(i);
+                int right = mGroupPositions.get(i + 1);
+                if (left < position && right < position) {
+                    return CHILD;
+                }
+            }
         }
 //        return super.getItemViewType(position);
+        // TODO: 2016/10/23
+        return 0;
     }
 
     public int getChildCount(int groupPosition) {
@@ -74,19 +90,24 @@ public class MyExpendGridAdapter<T extends RecyclerView.ViewHolder, E extends Re
 
     }
 
-    public void onBindChildViewHolder(ViewGroup parent, int viewType) {
+    public void onBindChildViewHolder(E holder, int position) {
 
     }
 
     public void onBindGroupViewHolder(E holder, int position) {
     }
 
-    public int getGroupType(int position) {
-        return 0;
-    }
+    /**
+     *
+     * @param array 数组
+     * @param value 需查询数字
+     */
+    private void binarySearch(int[] array, int value) {
+        int leftPos = 0;
+        int rightPos = array.length - 1;
 
-    public int getChildType(int groupPosition, int childPosition) {
-        return 1;
+        while (leftPos <= rightPos) {
+            
+        }
     }
-
 }

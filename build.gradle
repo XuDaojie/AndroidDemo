@@ -16,7 +16,7 @@ buildscript {
         buildTools = "24.0.3"
 
         supportVersion = '24.2.1'
-        constraintVersion = '1.0.0-alpha9'
+        constraintVersion = '1.0.0-beta1'
         rxjavaVersion = '1.2.0'
     }
 }
