@@ -44,6 +44,14 @@
       <sourceFolder url="file://$MODULE_DIR$/src/GooglePlayDebug/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/GooglePlayDebug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/GooglePlayDebug/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/kapt/GooglePlayDebugAndroidTest" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/GooglePlay/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/GooglePlay/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/GooglePlay/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/GooglePlay/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/GooglePlay/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/GooglePlay/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/GooglePlay/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/kapt/GooglePlayDebugUnitTest" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/test/GooglePlay/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testGooglePlayDebug/res" type="java-test-resource" />
@@ -54,14 +62,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/testGooglePlayDebug/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testGooglePlayDebug/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testGooglePlayDebug/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/kapt/GooglePlayDebugAndroidTest" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/GooglePlay/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/GooglePlay/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/GooglePlay/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/GooglePlay/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/GooglePlay/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/GooglePlay/debug" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/GooglePlay/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/GooglePlay/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/GooglePlay/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/GooglePlay/assets" type="java-resource" />

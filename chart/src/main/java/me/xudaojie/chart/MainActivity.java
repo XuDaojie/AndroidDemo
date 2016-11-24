@@ -9,6 +9,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
             yVals.add(new Entry(i, yVal));
         }
 
-        lineChart.getXAxis().setValueFormatter(new StringAxisValueFormatter(xVals));
+//        lineChart.getXAxis().setValueFormatter(new StringAxisValueFormatter(xVals));
+        lineChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xVals));
 
         LineDataSet dataSet = new LineDataSet(yVals, "xxx");
         LineData data = new LineData(dataSet);
