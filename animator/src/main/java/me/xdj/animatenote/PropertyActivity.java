@@ -44,7 +44,7 @@ public class PropertyActivity extends BaseActivity {
         // 渐显
 //                Animator animator = AnimatorInflater.loadAnimator(mContext, R.animator.object_animator_first);
 //                animator.setTarget(mText);
-//                animator.start();
+//                animator.activeAnimator();
 
         //
 //                AnimatorSet animatorSet = new AnimatorSet();
@@ -55,7 +55,7 @@ public class PropertyActivity extends BaseActivity {
 //                animatorSet.setDuration(2000);
 //                animatorSet.setInterpolator(new DecelerateInterpolator());
 //                animatorSet.play(animatorX).with(animatorY);
-//               animatorSet.start();
+//               animatorSet.activeAnimator();
 
         Rect startBounds = new Rect();
         Rect finalBounds = new Rect();
