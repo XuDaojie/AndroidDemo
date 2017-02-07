@@ -6,14 +6,17 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.android.tools.build:gradle:2.2.3'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
     ext {
-        buildTools = "24.0.3"
+        compileSdk = 24
+        buildTools = '24.0.3'
+        minSdk = 15
+        targetSdk = 24
 
         supportVersion = '24.2.1'
         constraintVersion = '1.0.0-beta3'

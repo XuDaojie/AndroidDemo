@@ -3,15 +3,15 @@ apply plugin: 'kotlin-android'
 apply plugin: 'com.neenbedankt.android-apt' // 注解处理
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion compileSdk
     buildToolsVersion buildTools
 
     defaultConfig {
         applicationId "io.github.xudaojie.androiddemo"
-        minSdkVersion 15
-        targetSdkVersion 24
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         jackOptions {
             enabled false
