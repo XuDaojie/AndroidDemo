@@ -1,1 +1,1 @@
-include ':app', ':vitamio', ':animator', ':dagger2', ':drawable', ':kotlin', ':behavior', ':recyclerview', ':rxjava', ':flexbox', ':chart'
+include ':app', ':vitamio', ':animator', ':dagger2', ':drawable', ':kotlin', ':behavior', ':recyclerview', ':rxjava', ':flexbox', ':chart', ':performance'
